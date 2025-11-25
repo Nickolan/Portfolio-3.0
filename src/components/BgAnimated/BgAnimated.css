@@ -1,0 +1,32 @@
+.bubbles {
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  z-index: -10;
+  position: fixed;
+  width: 100%;
+}
+.bubbles span {
+  transition: 1s;
+  width: 20px;
+  height: 20px;
+  background: var(--secundary-color);
+  margin: 0 4px;
+  box-shadow: 0 0 0 10px rgba(79, 195, 220, 0.2666666667), 0 0 50px var(--secundary-color), 0 0 100px var(--secundary-color);
+  animation: animate 15s linear infinite;
+  animation-duration: calc(120s / var(--i));
+}
+.bubbles span:nth-child(even) {
+  transition: 1s;
+  box-shadow: 0 0 0 10px rgba(79, 195, 220, 0.2666666667), 0 0 50px var(--secundary-color), 0 0 100px var(--secundary-color);
+  background: var(--secundary-color);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-10vh) scale(1);
+  }
+  100% {
+    transform: translateY(100vh) scale(0);
+  }
+}/*# sourceMappingURL=BgAnimated.css.map */

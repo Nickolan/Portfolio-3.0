@@ -1,0 +1,101 @@
+// src/styles/AboutMe/AboutMe.scss
+$secundary-Color: var(--secundary-color);
+
+// ... Estilos Mobile (max-width: 430px)
+
+// Monitor
+@media screen and (min-width: 1024px){
+    .zone{
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #About{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        > h3 {
+            font-size: 3em;
+            text-align: center;
+            margin: 0 3em;
+        }
+
+        .highlight-title {
+            color: $secundary-Color; // Resalta las palabras clave
+            font-weight: 700;
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: flex-start; // Alinea la imagen y el texto arriba
+            gap: 4em;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .profileImg{
+            width: 25em; 
+            height: 25em; /* Añadido: altura igual al ancho para hacerlo cuadrado */
+            object-fit: cover; /* Añadido: para que la imagen se recorte y rellene el espacio */
+            min-width: 300px; 
+            min-height: 300px; /* Asegura un tamaño mínimo cuadrado */
+            border-radius: 25px; /* Mantiene bordes redondeados, pero en un cuadrado */
+            box-shadow: 10px 10px 0px $secundary-Color; 
+            filter: grayscale(80%);
+            transition: filter 0.3s ease;
+            &:hover {
+                filter: grayscale(0%);
+            }
+        }
+
+        .description-content{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            flex-grow: 1; 
+
+            .main-text {
+                font-family: 'Lucida Sans', sans-serif;
+                font-size: 1.2em;
+                line-height: 1.6;
+                font-weight: 500;
+                color: #333;
+            }
+        }
+    }
+}
+
+// Mobile (Asegurémonos de que la imagen y el texto estén centrados y apilados)
+@media screen and (max-width: 430px){
+    .zone{
+        // ... (estilos de zona existentes)
+    }
+    #About {
+        // ...
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .profileImg {
+            width: 90vw;
+            height: 90vw; /* Añadido: altura igual al ancho para hacerlo cuadrado */
+            object-fit: cover; /* Añadido: para que la imagen se recorte y rellene el espacio */
+            box-shadow: 5px 5px 0px $secundary-Color;
+        }
+
+        .description-content{
+             .main-text {
+                font-size: 1em;
+                text-align: center;
+             }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+[
+    {"name": "HTML", "category": "Frontend"},
+    {"name": "CSS", "category": "Frontend"},
+    {"name": "Javascript", "category": "Frontend"},
+    {"name": "Typescript", "category": "Frontend"},
+    {"name": "React", "category": "Frontend"},
+    {"name": "Redux", "category": "Frontend"},
+    
+    {"name": "Node", "category": "Backend"},
+    {"name": "Express", "category": "Backend"},
+    {"name": "Java", "category": "Backend"},
+    {"name": "SpringBoot", "category": "Backend"},
+
+    {"name": "PosgreSQL", "category": "Databases"},
+    {"name": "MongoDB", "category": "Databases"},
+
+    {"name": "Expo", "category": "Mobile"},
+
+    {"name": "Docker", "category": "DevOps"},
+    {"name": "Git", "category": "DevOps"},
+    {"name": "Azure", "category": "DevOps"},
+    {"name": "Google_Cloud", "category": "DevOps"},
+    
+    {"name": "Gemini", "category": "AI/Tools"},
+    {"name": "ChatGPT", "category": "AI/Tools"}
+]

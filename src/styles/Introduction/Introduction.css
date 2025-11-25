@@ -1,0 +1,182 @@
+@media screen and (max-width: 430px) {
+  .zone {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  .zone #title {
+    color: black;
+    font-size: xx-large;
+  }
+  .zone #hello_world {
+    display: block;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 12ch;
+    animation: typing 2s steps(12), blink 0.5s infinite step-end alternate;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #Introduction {
+    display: flex;
+    padding: 50px 0px;
+    align-items: center;
+    gap: 100px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  #Introduction .cont-presentation {
+    font-size: 70px;
+    display: flex;
+  }
+  #Introduction .cont-presentation .hand-rotate {
+    animation: waveMove 3s reverse infinite;
+    transform-origin: bottom center;
+  }
+  #Introduction .wrapper {
+    display: inline-flex;
+  }
+  #Introduction .wrapper .static-txt {
+    font-size: 60px;
+    color: #000;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+  }
+  #Introduction .wrapper .dynamic-txts {
+    margin: 0px 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+  }
+  #Introduction .wrapper .dynamic-txts li {
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    color: var(--secundary-color);
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+    display: flex;
+    align-items: center;
+    text-align: end;
+  }
+  #Introduction .wrapper .dynamic-txts li span {
+    position: relative;
+    display: flex;
+  }
+  #Introduction .wrapper .dynamic-txts li span:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 6ch;
+    background: #fffdf8;
+    animation: typing 1.5s infinite;
+  }
+  #Introduction .contact-button {
+    padding: 1em 2em;
+    background-color: #fffdf8;
+    border: none;
+    color: #000;
+    border-radius: 1000px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    gap: 10px;
+  }
+  #Introduction .contact-button .button-item {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  #Introduction .contact-button .button-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom right, var(--secundary-color) 50%, #0069d2);
+    animation: rotateCircle 2s linear infinite;
+    z-index: 1;
+  }
+  #Introduction .contact-button .button-item::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: #fffdf8;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  #Introduction .contact-button::after {
+    content: "";
+    position: absolute;
+    height: 107%;
+    width: 102%;
+    border-radius: 1000px;
+    background-image: linear-gradient(to bottom right, var(--secundary-color), #2592ff);
+    z-index: -1;
+  }
+  #Introduction .contact-button:hover {
+    z-index: 0;
+    box-shadow: 40px 0 100px var(--secundary-color);
+    color: #f0f0f0;
+  }
+}
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+@keyframes slideRight {
+  100% {
+    right: -200px;
+  }
+}
+@keyframes waveMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  45% {
+    transform: rotate(12deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=Introduction.css.map */

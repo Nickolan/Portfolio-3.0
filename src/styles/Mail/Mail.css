@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* src/styles/Mail/Mail.css */
+/* Estilos para todos los dispositivos */
+.contact-section {
+  padding: 3em 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: black;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  margin-bottom: 1em;
+}
+
+.contact-options {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en móvil */
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px; /* Ancho fijo para las tarjetas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* Para enlaces de redes sociales */
+  color: inherit; /* Hereda el color del texto */
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.contact-item .icon {
+  font-size: 2rem;
+}
+
+.email-info, .social-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.mail-title, .social-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Estilo específico para el correo (puede ser copiado) */
+.email-item {
+  cursor: pointer;
+}
+
+.mail {
+  font-size: 0.9rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.mail.copied {
+  color: green;
+  font-weight: bold;
+}
+
+.social-link {
+  font-size: 0.9rem;
+  color: #3498db; /* Un color de acento profesional */
+  text-decoration: underline;
+}
+
+/* Adaptación a dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .contact-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-item {
+    width: 80%; /* Ocupa más espacio en móvil */
+  }
+}/*# sourceMappingURL=Mail.css.map */

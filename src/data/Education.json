@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title_es": "Técnico Universitario en Programación",
+        "title_en": "University Technician in Programming",
+        "institution": "Universidad Tecnológica Nacional (UTN)",
+        "status_es": "En curso",
+        "status_en": "In Progress",
+        "lapse_es": "03/2024 - 06/2026",
+        "lapse_en": "03/2024 - 06/2026",
+        "details_es": [
+            "Énfasis en metodologías ágiles y desarrollo de software escalable.",
+            "Tecnologías principales: Java, Spring Boot, Python, N8N, Bases de datos relacionales."
+        ],
+        "details_en": [
+            "Emphasis on agile methodologies and scalable software development.",
+            "Main technologies: Java, Spring Boot, Python, N8N, Relational databases."
+        ]
+    },
+    {
+        "id": 2,
+        "title_es": "Bootcamp Full Stack Developer",
+        "title_en": "Full Stack Developer Bootcamp",
+        "institution": "Soy Henry",
+        "status_es": "Finalizado",
+        "status_en": "Completed",
+        "lapse_es": "03/2023 - 08/2023",
+        "lapse_en": "03/2023 - 08/2023",
+        "details_es": [
+            "Más de 800 horas de código. Proyecto final: E-Commerce.",
+            "Stack: React, Redux, Node.js, Express, PostgreSQL."
+        ],
+        "details_en": [
+            "More than 800 hours of coding. Final project: E-Commerce.",
+            "Stack: React, Redux, Node.js, Express, PostgreSQL."
+        ]
+    }
+]

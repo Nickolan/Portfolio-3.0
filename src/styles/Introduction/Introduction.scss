@@ -1,0 +1,190 @@
+$secundary-Color: var(--secundary-color);
+// Mobile
+@media screen and (max-width: 430px){
+    .zone{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        #title{
+            color: black;
+            font-size: xx-large;
+        }
+        #hello_world{
+            display: block;
+            white-space: nowrap;
+            border-right: 4px solid;
+            width: 12ch;
+
+            animation: typing 2s steps(12), blink .5s infinite step-end alternate ;
+            overflow: hidden;
+        }
+    }
+    
+
+
+}
+
+// Monitor
+@media screen and (min-width: 1024px){
+    
+    #Introduction{
+        display: flex;
+        padding: 50px 0px;
+        align-items: center;
+        gap: 100px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        .cont-presentation{
+            font-size: 70px;
+            display: flex;
+            .hand-rotate{
+                animation: waveMove 3s reverse infinite;
+                transform-origin: bottom center;
+            }
+        }
+
+        .wrapper{
+            display: inline-flex;
+            .static-txt{
+                font-size: 60px;
+                color: #000;
+                font-weight: 400;
+                align-items: center;
+                display: flex;
+            }
+            .dynamic-txts{
+                margin: 0px 15px;
+                height: 90px;
+                line-height: 90px;
+                overflow: hidden;
+                li{
+                    list-style: none;
+                    font-size: 60px;
+                    font-weight: 500;
+                    color: $secundary-Color;
+                    position: relative;
+                    top: 0;
+                    animation: slide 6s steps(4) infinite;
+                    display: flex;
+                    align-items: center;
+                    text-align: end;
+                    span{
+                        position: relative;
+                        display: flex;
+                    }
+                    span:after{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        height: 100%;
+                        width: 6ch;
+                        background: #fffdf8;
+                        animation: typing 1.5s  infinite;
+                    }
+                }
+            }
+        }
+
+        .contact-button{
+            padding: 1em 2em;
+            background-color: #fffdf8;
+            border:none;
+            color: #000;
+            border-radius: 1000px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-decoration: none;
+            gap: 10px;
+            .button-item {
+                position: relative;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                overflow: hidden;
+              }
+              
+              .button-item::after {
+                content: '';
+                position: absolute;
+                inset: 0; // shorthand para top: 0; right: 0; bottom: 0; left: 0;
+                border-radius: 50%;
+                background-image: linear-gradient(to bottom right, $secundary-Color 50%, #0069d2);
+                animation: rotateCircle 2s linear infinite;
+                z-index: 1;
+              }
+              
+              .button-item::before {
+                content: '';
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                width: 50%;
+                height: 50%;
+                background-color: #fffdf8; // o el mismo fondo que tu app
+                border-radius: 50%;
+                z-index: 2;
+              }
+              
+        }
+        .contact-button::after{
+            content: '';
+            position: absolute;
+            height: 107%;
+            width: 102%;
+            border-radius: 1000px;
+            background-image: linear-gradient(to bottom right, $secundary-Color, #2592ff);
+            z-index: -1;
+        }
+        .contact-button:hover{
+            z-index: 0;
+            box-shadow: 40px 0 100px $secundary-Color;
+            color: #f0f0f0;
+        }
+    }
+   
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+
+@keyframes slideRight {
+    100%{
+        right: -200px;
+    }
+}
+
+@keyframes waveMove {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(15deg); }
+    30%  { transform: rotate(-10deg); }
+    45%  { transform: rotate(12deg); }
+    60%  { transform: rotate(-8deg); }
+    75%  { transform: rotate(6deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes rotateCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

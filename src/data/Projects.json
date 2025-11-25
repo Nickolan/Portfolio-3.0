@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Donca",
+        "img": "DoncaImage.png",
+        "description": "Plataforma de carpooling diseñada para facilitar el viaje compartido, enfocada en la optimización de rutas y la gestión de pagos seguros.",
+        "description_en": "Carpooling platform designed to facilitate shared travel, focused on route optimization and secure payment management.",
+        "web-url": "https://doncatravel.com",
+        "type": "Share Travel Platform",
+        "type-es": "Plataforma de Viaje Compartidos",
+        "techStack": ["React", "React Native", "Node.js", "Express", "PostgreSQL", "Expo"] 
+    },
+    {
+        "name": "M.N Club",
+        "img": "MNImage.png",
+        "description": "Sistema de gestión integral para la administración de eventos y fiestas, incluyendo venta de entradas, listas de invitados y control de acceso.",
+        "description_en": "Comprehensive management system for event and party administration, including ticket sales, guest lists, and access control.",
+        "web-url": "https://clubmn.goup.cloud",
+        "type": "Party Manager",
+        "type-es": "Administrador De Fiestas",
+        "techStack": ["React", "Node.js", "PostgreSQL", "React Native", "Azure"]
+    }
+]

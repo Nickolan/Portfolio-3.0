@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Full Stack Developer",
+        "corp": "Go up Cloud",
+        "start-date": "10/12/2023",
+        "end-date": "20/11/2025",
+        "lapse": "12/2023 - 11/2025",
+        "lapse-es": "12/2023 - 11/2025",
+        "description": [
+            "Desarrollo de interfaces de usuario usando React.JS",
+            "Desarrollo de aplicaciones Mobiles con React Native (Expo)"
+        ],
+        "description_en": [
+            "Development of user interfaces using React.JS",
+            "Development of Mobile applications with React Native (Expo)"
+        ]
+    },
+    {
+        "title": "Front end Developer (Internship)",
+        "corp": "FisiumFulness",
+        "start-date": "01/09/2023",
+        "end-date": "10/10/2023",
+        "lapse": "09/2023 - 10/2023",
+        "lapse-es": "09/2023 - 10/2023",
+        "description": [
+            "Implementacion de Apis para mapa nacional con busqueda en tiempo real de usuarios",
+            "Otra cosa mas que no me acuerdo"
+        ],
+        "description_en": [
+            "API implementation for national map with real-time user search",
+            "Something else I don't remember"
+        ]
+    }
+]

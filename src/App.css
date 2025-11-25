@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.zone {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Para pantallas más grandes que 768px (tablets y desktop) */
+  @media screen and (min-width: 768px) {
+    div.zone {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  

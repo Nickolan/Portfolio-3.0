@@ -1,0 +1,151 @@
+$secundary-Color: var(--secundary-color);
+$main-bg: #fffdf8;
+// Mobile
+@media screen and (max-width: 430px){
+    .zone{
+        
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        .project-item{
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            img{
+                width: 200px;
+                border-radius: 15px;
+            }
+        }
+    }
+    
+
+
+}
+
+// Monitor
+// Monitor
+@media screen and (min-width: 1024px){
+    .zone{
+        color: black;
+    }
+
+    #Projects{
+        padding: 4em 0; // Más espacio
+        h1{
+            margin: 1em 0;
+            font-size: 3em;
+            text-align: center;
+        }
+        
+        .project-container{
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+
+            .project-list {
+                // ... (estilos existentes)
+                gap: 5em; // Aumento la separación entre proyectos
+                
+                .project-item {
+                    // Contenedor principal del proyecto
+                    .project-card { 
+                        display: flex;
+                        align-items: center;
+                        gap: 3em;
+                        padding: 2em;
+                        border-radius: 15px;
+                        background-color: #f7f7f7; // Ligeramente gris
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    }
+              
+                    .pjt-img-content {
+                      overflow: hidden;
+                      width: 260px;
+                      height: 380px;
+                      border-radius: 15px; // Redondeo sutil
+                      transition: transform 0.3s ease, box-shadow 0.3s ease;
+                      box-shadow: 8px 8px 0px $secundary-Color; // Sombra de acento
+                      
+                        img {
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                        }
+              
+                      &:hover {
+                        transform: translate(-4px, -4px); // Efecto de elevación sutil
+                        box-shadow: 12px 12px 0px $secundary-Color; 
+                      }
+                    }
+        
+                    .pjt-data-content{
+                        display: flex;
+                        flex-direction: column; // Ahora es columna para organizar texto
+                        gap: 15px;
+                        flex-grow: 1;
+
+                        .pjt-title {
+                            font-size: 2.5em;
+                            font-weight: 700;
+                            color: $secundary-Color; // Título de proyecto en color de acento
+                        }
+                
+                        .pjt-subtitle {
+                            font-size: 1.1em;
+                            font-weight: 500;
+                            color: #555;
+                            border-bottom: 2px solid #ccc;
+                            padding-bottom: 5px;
+                        }
+                        
+                        .pjt-description {
+                            font-size: 1em;
+                            line-height: 1.5;
+                            color: #333;
+                        }
+
+                        // NUEVOS ESTILOS PARA LA PILA DE TECNOLOGÍAS
+                        .pjt-tech-stack {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+                            margin: 10px 0;
+                        }
+                        .tech-tag {
+                            background-color: #eee;
+                            color: #555;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            font-size: 0.85em;
+                            font-weight: 600;
+                        }
+
+                        .pjt-link-btn {
+                            // ... (estilos existentes para el botón de contacto, usa el mismo estilo)
+                        }
+                    }
+              
+                    // Elementos pares: invertir dirección
+                    &:nth-child(even) .project-card {
+                        flex-direction: row-reverse;
+                    }
+                    
+                    // Asegura que la sombra del proyecto par quede a la derecha
+                    &:nth-child(even) .pjt-img-content {
+                        box-shadow: -8px 8px 0px $secundary-Color; 
+
+                        &:hover {
+                            transform: translate(4px, -4px); 
+                            box-shadow: -12px 12px 0px $secundary-Color; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

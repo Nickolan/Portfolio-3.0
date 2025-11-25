@@ -1,0 +1,91 @@
+@charset "UTF-8";
+#Skills {
+  padding: 4em 0;
+  text-align: center;
+  /* --- Pestañas de Categoría (Tabs) --- */
+  /* --- Cuadrícula de Habilidades --- */
+}
+#Skills h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+#Skills .category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
+  gap: 12px;
+}
+#Skills .tab-button {
+  background: transparent;
+  border: 2px solid var(--secundary-color);
+  color: var(--secundary-color);
+  padding: 10px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+#Skills .tab-button:hover:not(.active) {
+  background-image: radial-gradient(circle, #fff, var(--secundary-color));
+  color: #333;
+  transform: translateY(-2px);
+}
+#Skills .tab-button.active {
+  background-color: var(--secundary-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(var(--secundary-color), 0.5);
+  transform: scale(1.05);
+  border-color: var(--secundary-color);
+}
+#Skills .wrapper-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adaptable */
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+#Skills .tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  border-radius: 15px;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#Skills .tool-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(var(--secundary-color), 0.2);
+  border-color: var(--secundary-color);
+}
+#Skills .tool-item img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 10px;
+}
+#Skills .tool-item .tool-name {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  #Skills .wrapper-skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #Skills h1 {
+    font-size: 2em;
+  }
+  #Skills .tab-button {
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+}/*# sourceMappingURL=Skills.css.map */

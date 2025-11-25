@@ -1,0 +1,16 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  background-color: #fffdf8;
+
+  min-height: 100vh;
+  
+  
+  /* background-image: url('../images/cuertofondo.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh; */
+  
+  
+}

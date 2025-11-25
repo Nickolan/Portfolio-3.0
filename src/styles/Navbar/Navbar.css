@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@media screen and (min-width: 1024px) {
+  nav {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco semitransparente */
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px); /* Efecto de desenfoque sutil (opcional) */
+    position: fixed;
+    padding: 0 40px;
+    font-weight: 600;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+    /* Nuevo estilo para el botón de cambio de idioma */
+  }
+  nav .nicolas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  nav .nicolas a {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.5em; /* Nombre más grande */
+    text-decoration: none;
+    color: var(--secundary-color); /* Nombre en color de acento */
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    gap: 30px; /* Separación más controlada */
+  }
+  nav ul li .nav-title {
+    color: #555;
+    font-weight: 500;
+    font-size: 1em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  nav ul li .nav-title:hover {
+    color: var(--secundary-color); /* Resalta al pasar el cursor */
+  }
+  nav .lenguageCont {
+    border: 2px solid var(--secundary-color);
+    padding: 8px 15px;
+    border-radius: 50px; /* Forma de píldora */
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  nav .lenguageCont .lang-text {
+    font-weight: 700;
+    color: var(--secundary-color);
+  }
+  nav .lenguageCont:hover {
+    background-color: var(--secundary-color);
+  }
+  nav .lenguageCont:hover .lang-text {
+    color: white;
+  }
+}
+@media screen and (max-width: 430px) {
+  nav {
+    flex-direction: row;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajuste para dar espacio al botón */
+    padding: 1rem 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    /* Ocultar menú en móvil y dejar solo el nombre y el control de idioma */
+  }
+  nav ul {
+    display: none;
+  }
+  nav .nicolas a {
+    font-size: large;
+    color: var(--secundary-color);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  nav .lenguageCont {
+    border: 1px solid var(--secundary-color);
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  nav .lenguageCont .lang-text {
+    font-weight: 600;
+    font-size: small;
+    color: var(--secundary-color);
+  }
+  nav .lenguageCont:hover {
+    background-color: var(--secundary-color);
+  }
+  nav .lenguageCont:hover .lang-text {
+    color: white;
+  }
+}/*# sourceMappingURL=Navbar.css.map */
