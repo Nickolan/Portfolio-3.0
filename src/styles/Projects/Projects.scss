@@ -1,149 +1,208 @@
+// src/styles/Projects/Projects.scss
+
 $secundary-Color: var(--secundary-color);
-$main-bg: #fffdf8;
-// Mobile
+$main-bg: #fffdf8; 
+
+// Mobile (Mantener estilos básicos, ajustar grid)
 @media screen and (max-width: 430px){
     .zone{
-        
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        display: flex; /* */
+        justify-content: center; /* */
+        flex-direction: column; /* */
+        align-items: center; /* */
         color: black;
+        
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
         .project-item{
-            text-decoration: none;
-            color: #000;
+            text-decoration: none; /* */
+            color: #000; /* */
+            display: flex; /* */
+            align-items: center; /* */
+            flex-direction: column; /* */
+            justify-content: center; /* */
+        }
+        .pjt-img-content {
+            width: 90vw;
+            height: 60vw; 
+            border-radius: 15px; /* */
+            position: relative; 
+            box-shadow: 5px 5px 0px $secundary-Color;
+        }
+        .pjt-img-content img{
+            width: 100%; /* */
+            height: 100%; /* */
+            object-fit: cover; /* */
+        }
+        // Mostrar el overlay por defecto o hacerlo visible para contenido
+        .pjt-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.65);
+            color: white;
             display: flex;
             align-items: center;
-            flex-direction: column;
             justify-content: center;
-            img{
-                width: 200px;
-                border-radius: 15px;
-            }
+            opacity: 1; 
+            transition: opacity 0.3s ease;
+            border-radius: 15px;
+        }
+        .pjt-overlay-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px;
+        }
+         .pjt-title {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        .pjt-summary {
+            font-size: 0.9em;
         }
     }
-    
-
-
 }
 
 // Monitor
-// Monitor
 @media screen and (min-width: 1024px){
     .zone{
-        color: black;
+        color: black; /* */
     }
 
     #Projects{
-        padding: 4em 0; // Más espacio
+        padding: 4em 0; /* */
+        
         h1{
-            margin: 1em 0;
-            font-size: 3em;
-            text-align: center;
+            margin: 1em 0; /* */
+            font-size: 3em; /* */
+            text-align: center; /* */
         }
         
         .project-container{
-            width: 85%;
-            max-width: 1200px;
-            margin: auto;
+            width: 85%; /* */
+            max-width: 1200px; /* */
+            margin: auto; /* */
 
             .project-list {
-                // ... (estilos existentes)
-                gap: 5em; // Aumento la separación entre proyectos
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Grid de 3 columnas ajustables */
+                gap: 40px; 
+                list-style: none; 
+                padding: 0; 
                 
                 .project-item {
-                    // Contenedor principal del proyecto
                     .project-card { 
-                        display: flex;
-                        align-items: center;
-                        gap: 3em;
-                        padding: 2em;
-                        border-radius: 15px;
-                        background-color: #f7f7f7; // Ligeramente gris
-                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                        display: block; 
+                        background-color: transparent;
+                        box-shadow: none;
+                        padding: 0;
                     }
               
                     .pjt-img-content {
-                      overflow: hidden;
-                      width: 260px;
-                      height: 380px;
-                      border-radius: 15px; // Redondeo sutil
-                      transition: transform 0.3s ease, box-shadow 0.3s ease;
-                      box-shadow: 8px 8px 0px $secundary-Color; // Sombra de acento
+                        overflow: hidden; /* */
+                        width: 100%; 
+                        height: 380px; 
+                        border-radius: 15px; /* */
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        box-shadow: 8px 8px 0px $secundary-Color; /* */
+                        position: relative; 
                       
                         img {
-                            width: 100%;
-                            height: auto;
-                            display: block;
+                            width: 100%; /* */
+                            height: 100%;
+                            object-fit: cover;
+                            transition: filter 0.3s ease; 
                         }
-              
-                      &:hover {
-                        transform: translate(-4px, -4px); // Efecto de elevación sutil
-                        box-shadow: 12px 12px 0px $secundary-Color; 
-                      }
-                    }
-        
-                    .pjt-data-content{
-                        display: flex;
-                        flex-direction: column; // Ahora es columna para organizar texto
-                        gap: 15px;
-                        flex-grow: 1;
 
-                        .pjt-title {
-                            font-size: 2.5em;
-                            font-weight: 700;
-                            color: $secundary-Color; // Título de proyecto en color de acento
-                        }
-                
-                        .pjt-subtitle {
-                            font-size: 1.1em;
-                            font-weight: 500;
-                            color: #555;
-                            border-bottom: 2px solid #ccc;
-                            padding-bottom: 5px;
+                        // --- Overlay de Información (Hover Effect) ---
+                        .pjt-overlay {
+                            position: absolute;
+                            inset: 0;
+                            background-color: rgba(0, 0, 0, 0.8); /* Oscurecer más para contraste */
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            opacity: 0; /* Oculto por defecto */
+                            transition: opacity 0.3s ease;
+                            border-radius: 15px;
                         }
                         
-                        .pjt-description {
-                            font-size: 1em;
-                            line-height: 1.5;
-                            color: #333;
+                        .pjt-overlay-content {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 15px;
+                            padding: 20px;
+                            max-width: 80%;
                         }
 
-                        // NUEVOS ESTILOS PARA LA PILA DE TECNOLOGÍAS
-                        .pjt-tech-stack {
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 8px;
-                            margin: 10px 0;
+                        .pjt-title {
+                            font-size: 1.8em;
+                            font-weight: 700; /* */
+                            color: white;
+                            margin-bottom: 5px;
                         }
-                        .tech-tag {
-                            background-color: #eee;
-                            color: #555;
-                            padding: 5px 10px;
-                            border-radius: 5px;
-                            font-size: 0.85em;
-                            font-weight: 600;
+
+                        .pjt-type-icon {
+                            font-size: 1em;
+                            font-weight: 500;
+                            color: $secundary-Color; 
+                            margin-bottom: 5px;
+                        }
+                        
+                        .pjt-summary {
+                            font-size: 1em; /* */
+                            line-height: 1.5; /* */
+                            color: #ccc;
+                            margin-bottom: 10px;
                         }
 
                         .pjt-link-btn {
-                            // ... (estilos existentes para el botón de contacto, usa el mismo estilo)
+                            display: inline-block;
+                            margin-top: 10px;
+                            padding: 10px 20px;
+                            background-color: $secundary-Color;
+                            color: white;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            
+                            &:hover {
+                                background-color: #000;
+                                color: $secundary-Color;
+                                transform: translateY(-2px);
+                            }
                         }
-                    }
-              
-                    // Elementos pares: invertir dirección
-                    &:nth-child(even) .project-card {
-                        flex-direction: row-reverse;
-                    }
-                    
-                    // Asegura que la sombra del proyecto par quede a la derecha
-                    &:nth-child(even) .pjt-img-content {
-                        box-shadow: -8px 8px 0px $secundary-Color; 
-
+                        
+                        // --- HOVER EFFECTS ---
                         &:hover {
-                            transform: translate(4px, -4px); 
-                            box-shadow: -12px 12px 0px $secundary-Color; 
+                            transform: translate(0, 0); 
+                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+                            
+                            img {
+                                filter: blur(3px); /* Aplicar blur a la imagen */
+                            }
+
+                            .pjt-overlay {
+                                opacity: 1; /* Mostrar el overlay */
+                            }
                         }
                     }
+                }
+            }
+            
+            // ELIMINAR ESTILOS DE ALTERNANCIA (Resetear las sombras)
+            .project-list .project-item:nth-child(even) .pjt-img-content {
+                box-shadow: 8px 8px 0px $secundary-Color; 
+                
+                &:hover {
+                    transform: translate(0, 0); 
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
                 }
             }
         }

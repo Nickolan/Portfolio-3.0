@@ -1,69 +1,91 @@
 $secundary-Color: var(--secundary-color);
 // Mobile
-@media screen and (max-width: 430px){
-    .zone{
+@media screen and (max-width: 430px) {
+    .zone {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         color: black;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        #title{
+
+        #title {
             color: black;
             font-size: xx-large;
         }
-        #hello_world{
+
+        #hello_world {
             display: block;
             white-space: nowrap;
             border-right: 4px solid;
             width: 12ch;
 
-            animation: typing 2s steps(12), blink .5s infinite step-end alternate ;
+            animation: typing 2s steps(12), blink .5s infinite step-end alternate;
             overflow: hidden;
         }
     }
-    
+
 
 
 }
 
 // Monitor
-@media screen and (min-width: 1024px){
-    
-    #Introduction{
-        display: flex;
-        padding: 50px 0px;
-        align-items: center;
-        gap: 100px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@media screen and (min-width: 1024px) {
 
-        .cont-presentation{
-            font-size: 70px;
+    #Introduction {
+        display: flex;
+        padding: 80px 0px; // Aumento el padding superior para separarlo del nav
+        align-items: flex-start;
+        gap: 60px;
+
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+        .cont-presentation {
+            font-size: 55px; // Reducimos un poco el tamaño
             display: flex;
-            .hand-rotate{
+
+            .static-txt {
+                font-weight: 500;
+            }
+
+            .hand-rotate {
                 animation: waveMove 3s reverse infinite;
                 transform-origin: bottom center;
             }
         }
 
-        .wrapper{
+        .dynamic-content-wrapper {
+            // NUEVO CONTENEDOR
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            gap: 40px; // Espacio entre el texto dinámico y la imagen
+        }
+
+        .wrapper {
             display: inline-flex;
-            .static-txt{
-                font-size: 60px;
+            flex-direction: column; 
+            align-items: flex-start;
+
+            .static-txt {
+                font-size: 55px; // Mismo tamaño que la presentación
                 color: #000;
                 font-weight: 400;
                 align-items: center;
                 display: flex;
             }
-            .dynamic-txts{
-                margin: 0px 15px;
-                height: 90px;
-                line-height: 90px;
+
+            .dynamic-txts {
+                margin: 0px 0px; // Eliminamos el margin horizontal para centrar el wrapper
+                height: 60px; // REDUCCIÓN: Altura del viewport de una línea
+                line-height: 60px; // REDUCCIÓN: Espaciado de la línea
                 overflow: hidden;
-                li{
+
+                li {
                     list-style: none;
-                    font-size: 60px;
-                    font-weight: 500;
+                    font-size: 55px; // REDUCCIÓN: Mismo tamaño que el estático
+                    font-weight: 600; // Un poco más de peso
                     color: $secundary-Color;
                     position: relative;
                     top: 0;
@@ -71,27 +93,46 @@ $secundary-Color: var(--secundary-color);
                     display: flex;
                     align-items: center;
                     text-align: end;
-                    span{
+
+                    span {
                         position: relative;
                         display: flex;
                     }
-                    span:after{
+
+                    span:after {
                         content: "";
                         position: absolute;
                         left: 0;
                         height: 100%;
-                        width: 6ch;
+                        width: 12ch; // Aseguramos que cubra todo
                         background: #fffdf8;
-                        animation: typing 1.5s  infinite;
+                        animation: typing 1.5s infinite;
                     }
                 }
             }
         }
 
-        .contact-button{
+        .dynamic-image-container {
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: white; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                animation: fadeIn 0.5s ease-out; // Efecto de transición para la imagen
+            }
+        }
+
+        .contact-button {
             padding: 1em 2em;
             background-color: #fffdf8;
-            border:none;
+            border: none;
             color: #000;
             border-radius: 1000px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -102,15 +143,16 @@ $secundary-Color: var(--secundary-color);
             position: relative;
             text-decoration: none;
             gap: 10px;
+
             .button-item {
                 position: relative;
                 width: 25px;
                 height: 25px;
                 border-radius: 50%;
                 overflow: hidden;
-              }
-              
-              .button-item::after {
+            }
+
+            .button-item::after {
                 content: '';
                 position: absolute;
                 inset: 0; // shorthand para top: 0; right: 0; bottom: 0; left: 0;
@@ -118,9 +160,9 @@ $secundary-Color: var(--secundary-color);
                 background-image: linear-gradient(to bottom right, $secundary-Color 50%, #0069d2);
                 animation: rotateCircle 2s linear infinite;
                 z-index: 1;
-              }
-              
-              .button-item::before {
+            }
+
+            .button-item::before {
                 content: '';
                 position: absolute;
                 top: 25%;
@@ -130,10 +172,11 @@ $secundary-Color: var(--secundary-color);
                 background-color: #fffdf8; // o el mismo fondo que tu app
                 border-radius: 50%;
                 z-index: 2;
-              }
-              
+            }
+
         }
-        .contact-button::after{
+
+        .contact-button::after {
             content: '';
             position: absolute;
             height: 107%;
@@ -142,49 +185,83 @@ $secundary-Color: var(--secundary-color);
             background-image: linear-gradient(to bottom right, $secundary-Color, #2592ff);
             z-index: -1;
         }
-        .contact-button:hover{
+
+        .contact-button:hover {
             z-index: 0;
             box-shadow: 40px 0 100px $secundary-Color;
             color: #f0f0f0;
         }
     }
-   
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes typing {
-    100%{
+    100% {
         left: 100%;
         margin: 0 -35px 0 35px;
     }
 }
 
 @keyframes slide {
-    100%{
-        top: -360px;
+    100% {
+        top: -240px; // CORREGIDO: 4 elementos * 60px de altura = 240px de desplazamiento total.
     }
 }
 
 @keyframes slideRight {
-    100%{
+    100% {
         right: -200px;
     }
 }
 
 @keyframes waveMove {
-    0%   { transform: rotate(0deg); }
-    15%  { transform: rotate(15deg); }
-    30%  { transform: rotate(-10deg); }
-    45%  { transform: rotate(12deg); }
-    60%  { transform: rotate(-8deg); }
-    75%  { transform: rotate(6deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(15deg);
+    }
+
+    30% {
+        transform: rotate(-10deg);
+    }
+
+    45% {
+        transform: rotate(12deg);
+    }
+
+    60% {
+        transform: rotate(-8deg);
+    }
+
+    75% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 @keyframes rotateCircle {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }

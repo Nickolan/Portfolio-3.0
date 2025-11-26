@@ -23,39 +23,51 @@
 @media screen and (min-width: 1024px) {
   #Introduction {
     display: flex;
-    padding: 50px 0px;
-    align-items: center;
-    gap: 100px;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    padding: 80px 0px;
+    align-items: flex-start;
+    gap: 60px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
   #Introduction .cont-presentation {
-    font-size: 70px;
+    font-size: 55px;
     display: flex;
+  }
+  #Introduction .cont-presentation .static-txt {
+    font-weight: 500;
   }
   #Introduction .cont-presentation .hand-rotate {
     animation: waveMove 3s reverse infinite;
     transform-origin: bottom center;
   }
+  #Introduction .dynamic-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    gap: 40px;
+  }
   #Introduction .wrapper {
     display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   #Introduction .wrapper .static-txt {
-    font-size: 60px;
+    font-size: 55px;
     color: #000;
     font-weight: 400;
     align-items: center;
     display: flex;
   }
   #Introduction .wrapper .dynamic-txts {
-    margin: 0px 15px;
-    height: 90px;
-    line-height: 90px;
+    margin: 0px 0px;
+    height: 60px;
+    line-height: 60px;
     overflow: hidden;
   }
   #Introduction .wrapper .dynamic-txts li {
     list-style: none;
-    font-size: 60px;
-    font-weight: 500;
+    font-size: 55px;
+    font-weight: 600;
     color: var(--secundary-color);
     position: relative;
     top: 0;
@@ -73,9 +85,25 @@
     position: absolute;
     left: 0;
     height: 100%;
-    width: 6ch;
+    width: 12ch;
     background: #fffdf8;
     animation: typing 1.5s infinite;
+  }
+  #Introduction .dynamic-image-container {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  #Introduction .dynamic-image-container img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    animation: fadeIn 0.5s ease-out;
   }
   #Introduction .contact-button {
     padding: 1em 2em;
@@ -133,6 +161,16 @@
     color: #f0f0f0;
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @keyframes typing {
   100% {
     left: 100%;
@@ -141,7 +179,7 @@
 }
 @keyframes slide {
   100% {
-    top: -360px;
+    top: -240px;
   }
 }
 @keyframes slideRight {
