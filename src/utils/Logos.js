@@ -20,6 +20,7 @@ import Java from '../assets/Skills/java-logo.png'
 import SpringBoot from '../assets/Skills/springboot-logo.png'
 import Gemini from '../assets/Skills/gemini-logo.png';
 import ChatGPT from '../assets/Skills/ChatGPT-logo.png';
+import Firebase from '../assets/Skills/firebase-logo.png'
 
 export {HTML, 
     CSS, 
@@ -42,5 +43,6 @@ export {HTML,
     Java,
     SpringBoot,
     Gemini,
-    ChatGPT
+    ChatGPT,
+    Firebase
 }

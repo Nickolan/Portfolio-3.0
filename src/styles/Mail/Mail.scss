@@ -1,4 +1,8 @@
-/* src/styles/Mail/Mail.css */
+// src/styles/Mail/Mail.scss
+
+$secundary-Color: var(--secundary-color);
+$item-bg: #f7f7f7; // Fondo de tarjeta ligeramente gris
+$hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 
 /* Estilos para todos los dispositivos */
 .contact-section {
@@ -6,91 +10,134 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    color: black;
+    gap: 25px; // Aumentamos el gap
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .contact-section h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem; // Título más grande
     margin-bottom: 0.5em;
 }
 
 .contact-intro {
-    font-size: 1.1rem;
-    margin-bottom: 1em;
+    font-size: 1.1em;
+    margin-bottom: 2em;
 }
 
 .contact-options {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en móvil */
+    flex-wrap: wrap; 
     justify-content: center;
-    gap: 20px;
+    gap: 30px; // Espaciado entre tarjetas
+    padding: 0 20px;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
-    border: 1px solid #ddd;
+    gap: 20px; // Espacio entre ícono y texto
+    padding: 25px;
     border-radius: 10px;
-    width: 300px; /* Ancho fijo para las tarjetas */
+    width: 350px; // Ancho fijo para desktop
+    background-color: $item-bg;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none; /* Para enlaces de redes sociales */
-    color: inherit; /* Hereda el color del texto */
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #eee;
+    
+    // Sombra sutil y elevación al pasar el cursor
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $hover-shadow;
+        cursor: pointer;
+    }
 }
 
-.contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.contact-item .icon {
-    font-size: 2rem;
+.icon {
+    font-size: 2.5rem; // Íconos más grandes
+    color: $secundary-Color; // Color principal para íconos que no son de marca
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px; // Asegura que el ícono tenga espacio y no se mueva
 }
 
 .email-info, .social-info {
     text-align: left;
     display: flex;
     flex-direction: column;
+    flex-grow: 1; // Permite que el contenido tome el espacio restante
 }
 
 .mail-title, .social-title {
     margin: 0;
     font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* --- ESTILOS MEJORADOS PARA CORREO LARGO Y FEEDBACK --- */
+
+.email-item {
+    cursor: pointer;
+    position: relative; 
+    
+    // Estilo para el estado de COPIADO (toda la tarjeta)
+    &.copied {
+        border-color: green;
+        background-color: lighten(green, 45%); // Fondo verde claro
+        .copy-status {
+            color: green;
+            font-weight: bold;
+        }
+    }
+}
+
+.mail-address {
+    font-size: 0.9rem;
+    color: #555;
+    white-space: nowrap; // Evita el salto de línea
+    overflow: hidden;    // OCULTA el texto que sobresale
+    text-overflow: ellipsis; // MUESTRA puntos suspensivos (...)
+    max-width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block; // Necesario para que overflow/ellipsis funcionen
     font-weight: 600;
 }
 
-/* Estilo específico para el correo (puede ser copiado) */
-.email-item {
-    cursor: pointer;
-}
-
-.mail {
-    font-size: 0.9rem;
-    color: #555;
+.copy-status {
+    font-size: 0.8em;
+    color: #999;
     transition: color 0.3s ease;
+    text-transform: uppercase;
 }
 
-.mail.copied {
-    color: green;
-    font-weight: bold;
-}
 
 .social-link {
-    font-size: 0.9rem;
-    color: #3498db; /* Un color de acento profesional */
-    text-decoration: underline;
+    font-size: 0.9em;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 5px;
+    
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
-/* Adaptación a dispositivos móviles */
+/* --- Adaptación a dispositivos móviles --- */
 @media screen and (max-width: 768px) {
     .contact-options {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
     .contact-item {
-        width: 80%; /* Ocupa más espacio en móvil */
+        width: 90%; // Ocupa más espacio en móvil
+        max-width: 350px;
+    }
+    .contact-section h2 {
+        font-size: 2em;
     }
 }

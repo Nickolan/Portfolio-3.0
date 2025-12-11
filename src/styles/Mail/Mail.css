@@ -1,96 +1,131 @@
 @charset "UTF-8";
-/* src/styles/Mail/Mail.css */
 /* Estilos para todos los dispositivos */
 .contact-section {
   padding: 3em 0;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  color: black;
+  gap: 25px;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-section h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 0.5em;
 }
 
 .contact-intro {
-  font-size: 1.1rem;
-  margin-bottom: 1em;
+  font-size: 1.1em;
+  margin-bottom: 2em;
 }
 
 .contact-options {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en móvil */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  padding: 0 20px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 20px;
-  border: 1px solid #ddd;
+  gap: 20px;
+  padding: 25px;
   border-radius: 10px;
-  width: 300px; /* Ancho fijo para las tarjetas */
+  width: 350px;
+  background-color: #f7f7f7;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none; /* Para enlaces de redes sociales */
-  color: inherit; /* Hereda el color del texto */
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #eee;
 }
-
 .contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 
-.contact-item .icon {
-  font-size: 2rem;
+.icon {
+  font-size: 2.5rem;
+  color: var(--secundary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
 }
 
 .email-info, .social-info {
   text-align: left;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .mail-title, .social-title {
   margin: 0;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* Estilo específico para el correo (puede ser copiado) */
+/* --- ESTILOS MEJORADOS PARA CORREO LARGO Y FEEDBACK --- */
 .email-item {
   cursor: pointer;
+  position: relative;
 }
-
-.mail {
-  font-size: 0.9rem;
-  color: #555;
-  transition: color 0.3s ease;
+.email-item.copied {
+  border-color: green;
+  background-color: rgb(102.5, 255, 102.5);
 }
-
-.mail.copied {
+.email-item.copied .copy-status {
   color: green;
   font-weight: bold;
 }
 
-.social-link {
+.mail-address {
   font-size: 0.9rem;
-  color: #3498db; /* Un color de acento profesional */
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: 600;
+}
+
+.copy-status {
+  font-size: 0.8em;
+  color: #999;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.social-link {
+  font-size: 0.9em;
+  color: #3498db;
+  text-decoration: none;
+  margin-top: 5px;
+}
+.social-link:hover {
   text-decoration: underline;
 }
 
-/* Adaptación a dispositivos móviles */
+/* --- Adaptación a dispositivos móviles --- */
 @media screen and (max-width: 768px) {
   .contact-options {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
   .contact-item {
-    width: 80%; /* Ocupa más espacio en móvil */
+    width: 90%;
+    max-width: 350px;
+  }
+  .contact-section h2 {
+    font-size: 2em;
   }
 }/*# sourceMappingURL=Mail.css.map */

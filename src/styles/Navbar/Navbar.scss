@@ -131,3 +131,22 @@ $nav-height: 60px;
         }
     }
 }
+
+@media screen and (min-width: 431px) and (max-width: 1023px) {
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+        .nicolas a {
+            font-size: 1.2em;
+        }
+        
+        // Hacemos que los enlaces se muestren, pero con un espaciado reducido
+        ul {
+            display: flex;
+            gap: 20px;
+        }
+        .lenguageCont {
+            // Estilos del botón de idioma
+        }
+    }
+}

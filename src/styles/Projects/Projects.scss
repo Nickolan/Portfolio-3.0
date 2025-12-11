@@ -3,13 +3,13 @@
 $secundary-Color: var(--secundary-color);
 $main-bg: #fffdf8; 
 
-// Mobile (Mantener estilos básicos, ajustar grid)
+// === MOBILE (max-width: 430px) ===
 @media screen and (max-width: 430px){
     .zone{
-        display: flex; /* */
-        justify-content: center; /* */
-        flex-direction: column; /* */
-        align-items: center; /* */
+        display: flex; 
+        justify-content: center; 
+        flex-direction: column; 
+        align-items: center; 
         color: black;
         
         .project-list {
@@ -18,26 +18,25 @@ $main-bg: #fffdf8;
             gap: 20px;
         }
         .project-item{
-            text-decoration: none; /* */
-            color: #000; /* */
-            display: flex; /* */
-            align-items: center; /* */
-            flex-direction: column; /* */
-            justify-content: center; /* */
+            text-decoration: none; 
+            color: #000; 
+            display: flex; 
+            align-items: center; 
+            flex-direction: column; 
+            justify-content: center; 
         }
         .pjt-img-content {
             width: 90vw;
             height: 60vw; 
-            border-radius: 15px; /* */
+            border-radius: 15px; 
             position: relative; 
             box-shadow: 5px 5px 0px $secundary-Color;
         }
         .pjt-img-content img{
-            width: 100%; /* */
-            height: 100%; /* */
-            object-fit: cover; /* */
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
         }
-        // Mostrar el overlay por defecto o hacerlo visible para contenido
         .pjt-overlay {
             position: absolute;
             inset: 0;
@@ -66,29 +65,44 @@ $main-bg: #fffdf8;
     }
 }
 
-// Monitor
+// === Tablet (min-width: 431px and max-width: 1023px) ===
+@media screen and (min-width: 431px) and (max-width: 1023px) {
+    #Projects .project-container {
+        width: 90%;
+    }
+    #Projects .project-container .project-list {
+        grid-template-columns: repeat(2, 1fr); /* Forzamos 2 columnas */
+        gap: 30px;
+    }
+    #Projects .project-container .project-list .project-item .pjt-img-content {
+        height: 300px; /* Reducimos la altura en tablet */
+    }
+}
+
+
+// === MONITOR (min-width: 1024px) ===
 @media screen and (min-width: 1024px){
     .zone{
-        color: black; /* */
+        color: black; 
     }
 
     #Projects{
-        padding: 4em 0; /* */
+        padding: 4em 0; 
         
         h1{
-            margin: 1em 0; /* */
-            font-size: 3em; /* */
-            text-align: center; /* */
+            margin: 1em 0; 
+            font-size: 3em; 
+            text-align: center; 
         }
         
         .project-container{
-            width: 85%; /* */
-            max-width: 1200px; /* */
-            margin: auto; /* */
+            width: 85%; 
+            max-width: 1200px; 
+            margin: auto; 
 
             .project-list {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Grid de 3 columnas ajustables */
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
                 gap: 40px; 
                 list-style: none; 
                 padding: 0; 
@@ -102,32 +116,31 @@ $main-bg: #fffdf8;
                     }
               
                     .pjt-img-content {
-                        overflow: hidden; /* */
+                        overflow: hidden; 
                         width: 100%; 
                         height: 380px; 
-                        border-radius: 15px; /* */
+                        border-radius: 15px; 
                         transition: transform 0.3s ease, box-shadow 0.3s ease;
-                        box-shadow: 8px 8px 0px $secundary-Color; /* */
+                        box-shadow: 8px 8px 0px $secundary-Color; 
                         position: relative; 
                       
                         img {
-                            width: 100%; /* */
+                            width: 100%; 
                             height: 100%;
                             object-fit: cover;
                             transition: filter 0.3s ease; 
                         }
 
-                        // --- Overlay de Información (Hover Effect) ---
                         .pjt-overlay {
                             position: absolute;
                             inset: 0;
-                            background-color: rgba(0, 0, 0, 0.8); /* Oscurecer más para contraste */
+                            background-color: rgba(0, 0, 0, 0.8); 
                             color: white;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             text-align: center;
-                            opacity: 0; /* Oculto por defecto */
+                            opacity: 0; 
                             transition: opacity 0.3s ease;
                             border-radius: 15px;
                         }
@@ -142,7 +155,7 @@ $main-bg: #fffdf8;
 
                         .pjt-title {
                             font-size: 1.8em;
-                            font-weight: 700; /* */
+                            font-weight: 700; 
                             color: white;
                             margin-bottom: 5px;
                         }
@@ -155,8 +168,8 @@ $main-bg: #fffdf8;
                         }
                         
                         .pjt-summary {
-                            font-size: 1em; /* */
-                            line-height: 1.5; /* */
+                            font-size: 1em; 
+                            line-height: 1.5; 
                             color: #ccc;
                             margin-bottom: 10px;
                         }
@@ -179,24 +192,22 @@ $main-bg: #fffdf8;
                             }
                         }
                         
-                        // --- HOVER EFFECTS ---
                         &:hover {
                             transform: translate(0, 0); 
                             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
                             
                             img {
-                                filter: blur(3px); /* Aplicar blur a la imagen */
+                                filter: blur(3px); 
                             }
 
                             .pjt-overlay {
-                                opacity: 1; /* Mostrar el overlay */
+                                opacity: 1; 
                             }
                         }
                     }
                 }
             }
             
-            // ELIMINAR ESTILOS DE ALTERNANCIA (Resetear las sombras)
             .project-list .project-item:nth-child(even) .pjt-img-content {
                 box-shadow: 8px 8px 0px $secundary-Color; 
                 

@@ -9,6 +9,8 @@ import Mail from '../components/Mail'
 import Experience from '../components/Experience'
 import Education from '../components/Education'
 import BgAnimated from '../components/BgAnimated/BgAnimated'
+import Testimonials from '../components/Testimonials'
+import ContactForm from '../components/ContactForm'
 
 const Home = () => {
   return (
@@ -21,6 +23,8 @@ const Home = () => {
         <Skills/>
         <Experience/>
         <Education/>
+        <Testimonials/>
+        <ContactForm/>
         <Mail/>
     </div>
   )

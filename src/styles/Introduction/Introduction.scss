@@ -1,117 +1,175 @@
+// src/styles/Introduction/Introduction.scss
+
 $secundary-Color: var(--secundary-color);
-// Mobile
-@media screen and (max-width: 430px) {
-    .zone {
+$main-bg: #fffdf8; 
+
+// === MOBILE (max-width: 430px) ===
+@media screen and (max-width: 430px){
+    .zone{
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         color: black;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        
+        .cont-presentation{
+            font-size: 30px; 
+            display: flex;
+            align-items: center;
 
-        #title {
-            color: black;
-            font-size: xx-large;
+            .hand-rotate{
+                font-size: 35px;
+            }
         }
 
-        #hello_world {
-            display: block;
-            white-space: nowrap;
-            border-right: 4px solid;
-            width: 12ch;
+        .dynamic-content-wrapper { 
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px; 
+        }
 
-            animation: typing 2s steps(12), blink .5s infinite step-end alternate;
-            overflow: hidden;
+        .wrapper{
+            display: inline-flex;
+            flex-direction: column; 
+            align-items: center;
+            
+            .static-txt{
+                font-size: 30px; 
+                font-weight: 400;
+            }
+            .dynamic-txts{
+                margin: 0px 0px;
+                height: 35px; 
+                line-height: 35px;
+                overflow: hidden;
+
+                li{
+                    font-size: 35px; 
+                    font-weight: 600;
+                    animation: slide-mobile 6s steps(4) infinite; 
+                }
+                li span:after{
+                    width: 8ch; 
+                    background: $main-bg;
+                }
+            }
+        }
+        
+        .dynamic-image-container {
+            width: 80px;
+            height: 80px;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+            img { 
+                width: 100%; 
+                height: 100%; 
+                object-fit: contain;
+            }
+        }
+
+        .contact-button {
+            padding: 0.8em 1.5em; 
+            
+            .button-item {
+                width: 20px;
+                height: 20px;
+            }
+            .static-txt {
+                font-size: 1em; 
+            }
         }
     }
-
-
-
+    
+    @keyframes slide-mobile {
+        100%{
+            top: -140px; 
+        }
+    }
 }
 
-// Monitor
-@media screen and (min-width: 1024px) {
-
-    #Introduction {
+// === MONITOR (min-width: 1024px) ===
+@media screen and (min-width: 1024px){
+    
+    #Introduction{
         display: flex;
-        padding: 80px 0px; // Aumento el padding superior para separarlo del nav
+        padding: 80px 0px; 
         align-items: flex-start;
-        gap: 60px;
-
+        gap: 60px; 
+        
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-        .cont-presentation {
-            font-size: 55px; // Reducimos un poco el tamaño
+        .cont-presentation{
+            font-size: 55px;
             display: flex;
 
             .static-txt {
                 font-weight: 500;
             }
-
-            .hand-rotate {
+            .hand-rotate{
                 animation: waveMove 3s reverse infinite;
                 transform-origin: bottom center;
             }
         }
 
-        .dynamic-content-wrapper {
-            // NUEVO CONTENEDOR
+        .dynamic-content-wrapper { 
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 80%;
-            gap: 40px; // Espacio entre el texto dinámico y la imagen
+            gap: 40px; 
         }
 
-        .wrapper {
+        .wrapper{
             display: inline-flex;
             flex-direction: column; 
             align-items: flex-start;
 
-            .static-txt {
-                font-size: 55px; // Mismo tamaño que la presentación
+            .static-txt{
+                font-size: 55px;
                 color: #000;
                 font-weight: 400;
                 align-items: center;
                 display: flex;
             }
 
-            .dynamic-txts {
-                margin: 0px 0px; // Eliminamos el margin horizontal para centrar el wrapper
-                height: 60px; // REDUCCIÓN: Altura del viewport de una línea
-                line-height: 60px; // REDUCCIÓN: Espaciado de la línea
+            .dynamic-txts{
+                margin: 0px 0px; 
+                height: 60px; 
+                line-height: 60px; 
                 overflow: hidden;
-
-                li {
+                
+                li{
                     list-style: none;
-                    font-size: 55px; // REDUCCIÓN: Mismo tamaño que el estático
-                    font-weight: 600; // Un poco más de peso
+                    font-size: 55px; 
+                    font-weight: 600; 
                     color: $secundary-Color;
                     position: relative;
                     top: 0;
-                    animation: slide 6s steps(4) infinite;
+                    animation: slide 6s steps(4) infinite; 
                     display: flex;
                     align-items: center;
                     text-align: end;
-
-                    span {
+                    
+                    span{
                         position: relative;
                         display: flex;
                     }
-
-                    span:after {
+                    span:after{
                         content: "";
                         position: absolute;
                         left: 0;
                         height: 100%;
-                        width: 12ch; // Aseguramos que cubra todo
-                        background: #fffdf8;
+                        width: 12ch; 
+                        background: $main-bg;
                         animation: typing 1.5s infinite;
                     }
                 }
             }
         }
-
+        
         .dynamic-image-container {
             width: 120px;
             height: 120px;
@@ -121,18 +179,18 @@ $secundary-Color: var(--secundary-color);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
             
-            img {
-                width: 100%;
-                height: 100%;
+            img { 
+                width: 100%; 
+                height: 100%; 
                 object-fit: contain;
-                animation: fadeIn 0.5s ease-out; // Efecto de transición para la imagen
+                animation: fadeIn 0.5s ease-out; 
             }
         }
 
-        .contact-button {
+        .contact-button{
             padding: 1em 2em;
             background-color: #fffdf8;
-            border: none;
+            border:none;
             color: #000;
             border-radius: 1000px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -143,40 +201,38 @@ $secundary-Color: var(--secundary-color);
             position: relative;
             text-decoration: none;
             gap: 10px;
-
             .button-item {
                 position: relative;
                 width: 25px;
                 height: 25px;
                 border-radius: 50%;
                 overflow: hidden;
-            }
-
-            .button-item::after {
+              }
+              
+              .button-item::after {
                 content: '';
                 position: absolute;
-                inset: 0; // shorthand para top: 0; right: 0; bottom: 0; left: 0;
+                inset: 0; 
                 border-radius: 50%;
                 background-image: linear-gradient(to bottom right, $secundary-Color 50%, #0069d2);
                 animation: rotateCircle 2s linear infinite;
                 z-index: 1;
-            }
-
-            .button-item::before {
+              }
+              
+              .button-item::before {
                 content: '';
                 position: absolute;
                 top: 25%;
                 left: 25%;
                 width: 50%;
                 height: 50%;
-                background-color: #fffdf8; // o el mismo fondo que tu app
+                background-color: $main-bg;
                 border-radius: 50%;
                 z-index: 2;
-            }
-
+              }
+              
         }
-
-        .contact-button::after {
+        .contact-button::after{
             content: '';
             position: absolute;
             height: 107%;
@@ -185,83 +241,97 @@ $secundary-Color: var(--secundary-color);
             background-image: linear-gradient(to bottom right, $secundary-Color, #2592ff);
             z-index: -1;
         }
-
-        .contact-button:hover {
+        .contact-button:hover{
             z-index: 0;
             box-shadow: 40px 0 100px $secundary-Color;
             color: #f0f0f0;
         }
     }
-
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
+   
+    @keyframes slide {
+        100%{
+            top: -240px; 
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes typing {
+        100%{
+            left: 100%;
+            margin: 0 -35px 0 35px;
+        }
     }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes typing {
-    100% {
-        left: 100%;
-        margin: 0 -35px 0 35px;
-    }
-}
-
-@keyframes slide {
-    100% {
-        top: -240px; // CORREGIDO: 4 elementos * 60px de altura = 240px de desplazamiento total.
-    }
-}
-
-@keyframes slideRight {
-    100% {
-        right: -200px;
-    }
-}
-
-@keyframes waveMove {
-    0% {
-        transform: rotate(0deg);
+    @keyframes waveMove {
+        0%   { transform: rotate(0deg); }
+        15%  { transform: rotate(15deg); }
+        30%  { transform: rotate(-10deg); }
+        45%  { transform: rotate(12deg); }
+        60%  { transform: rotate(-8deg); }
+        75%  { transform: rotate(6deg); }
+        100% { transform: rotate(0deg); }
     }
 
-    15% {
-        transform: rotate(15deg);
-    }
-
-    30% {
-        transform: rotate(-10deg);
-    }
-
-    45% {
-        transform: rotate(12deg);
-    }
-
-    60% {
-        transform: rotate(-8deg);
-    }
-
-    75% {
-        transform: rotate(6deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
+    @keyframes rotateCircle {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
     }
 }
 
-@keyframes rotateCircle {
-    0% {
-        transform: rotate(0deg);
+// === Tablet (min-width: 431px and max-width: 1023px) - Intermedio ===
+@media screen and (min-width: 431px) and (max-width: 1023px) {
+    #Introduction {
+        padding: 60px 0px; 
+        gap: 30px; 
+        
+        .cont-presentation{
+            font-size: 45px;
+        }
+
+        .dynamic-content-wrapper { 
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            gap: 20px;
+        }
+
+        .wrapper .static-txt, 
+        .wrapper .dynamic-txts li {
+            font-size: 45px;
+            height: 50px;
+            line-height: 50px;
+        }
+        .wrapper .dynamic-txts li {
+            animation: slide-tablet 6s steps(4) infinite;
+        }
+
+        .dynamic-image-container {
+            width: 100px;
+            height: 100px;
+        }
+
+        .contact-button{
+            padding: 1em 1.8em;
+        }
     }
 
-    100% {
-        transform: rotate(360deg);
+    @keyframes slide-tablet {
+        100%{
+            top: -200px; /* 4 * 50px = 200px */
+        }
     }
 }

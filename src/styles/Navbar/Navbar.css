@@ -110,4 +110,17 @@
   nav .lenguageCont:hover .lang-text {
     color: white;
   }
+}
+@media screen and (min-width: 431px) and (max-width: 1023px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  nav .nicolas a {
+    font-size: 1.2em;
+  }
+  nav ul {
+    display: flex;
+    gap: 20px;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

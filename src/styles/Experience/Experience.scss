@@ -1,148 +1,174 @@
+// src/styles/Experience/Experience.scss
+
 $secundary-Color: var(--secundary-color);
+$current-color: #e74c3c; // Color de acento para 'Actualidad'
 
-// Mobile
-@media screen and (max-width: 430px){
-
+// Estilos para la sección completa
+#Experience {
+    padding: 4em 0; // Más espacio vertical
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 3em;
+    }
 }
 
-// Monitor
-@media screen and (min-width: 1024px){
-    #Experience {
-        padding: 2rem;
-      
-        h1 {
-          text-align: center;
-          margin-bottom: 2rem;
-          font-size: 2rem;
-        }
-      
-        .jobs-content {
-          position: relative;
-          width: 100%;
-          padding: 2rem 0;
-      
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background-color: #3498db;
-            transform: translateX(-50%);
-          }
-      
-          .job-item {
-            position: relative;
-            width: 45%;
-            padding: 1rem;
-            margin-bottom: 2rem;
-      
-            .timeline-dot {
-              position: absolute;
-              top: 1rem;
-              width: 16px;
-              height: 16px;
-              background-color: #3498db;
-              border-radius: 50%;
-              border: 3px solid white;
-              z-index: 2;
-              transition: background-color 0.3s ease, transform 0.3s ease;
-            }
+.jobs-content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
 
-            &.current { // Nueva clase para el trabajo actual
-            .timeline-dot {
-                background-color: #e74c3c; // Color de acento para actual
-                transform: scale(1.5);
-            }
-            .job-info .job-title {
-                color: #e74c3c; // Color para el título actual
-                font-style: italic;
-            }
-        }
-      
-            .job-info {
-              padding: 1rem;
-              border-radius: 8px;
-              gap: 10px;
-              display: flex;
-              flex-direction: column;
+// Línea vertical central
+.jobs-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #3498db;
+    transform: translateX(-50%);
+}
 
-      
-              .job-title {
-                font-weight: bold;
-                font-size: 1.4rem;
-                color: $secundary-Color;
-              }
-      
-              
-              .job-lapse{
-                display: flex;
-                flex-direction: row;
-                gap: 10px;
-                .job-text {
-                    font-size: 1rem;
-                    color: #555;
-                    margin-top: 0.25rem;
-                    font-weight: 900;
-                }
-              }
-            }
-      
-            &.left {
-              left: 0;
-      
-              .timeline-dot {
-                right: -8px;
-              }
-      
-              .job-info {
-                text-align: right;
-                .job-lapse{
-                    align-self: flex-end;
-                    display: flex;
-                    text-align: right;
-                    gap: 10px;
-                }
-              }
-            }
-      
-            &.right {
-              left: 55%;
-      
-              .timeline-dot {
-                left: -8px;
-              }
-      
-              .job-info {
-                text-align: left;
-              }
-            }
-          }
+.job-item {
+    position: relative;
+    width: 45%; // Ocupa 45% del ancho total
+    padding: 1rem;
+    margin-bottom: 3rem; // Aumento el margen entre ítems
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 1.5rem; // Centrado verticalmente con el padding
+    width: 16px;
+    height: 16px;
+    background-color: #3498db;
+    border-radius: 50%;
+    border: 3px solid white;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para el trabajo actual */
+.job-item.current { 
+    .timeline-dot {
+        background-color: $current-color; // Rojo/Naranja para actual
+        transform: scale(1.5);
+    }
+    .job-info .job-title {
+        color: $current-color;
+        font-style: italic;
+    }
+}
+
+.job-info {
+    padding: 1.5rem;
+    border-radius: 8px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7; // Fondo ligero para el card
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-info .job-title {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: $secundary-Color;
+}
+
+.job-info .job-lapse {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.job-info .job-lapse .job-text {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.job-info p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 5px;
+}
+
+
+/* === Diseños de Posición: Izquierda y Derecha (Minimun 1024px) === */
+
+.job-item.left {
+    left: 0;
+    
+    .timeline-dot {
+        right: -10px; // 10px desde el borde derecho del 45%
+    }
+
+    .job-info {
+        text-align: right;
+        .job-lapse{
+            align-self: flex-end;
         }
-      
-        // Responsive
-        @media screen and (max-width: 768px) {
-          .jobs-content {
-            &::before {
-              left: 8px;
-            }
-      
-            .job-item {
-              width: 100%;
-              left: 0 !important;
-              padding-left: 2rem;
-      
-              .timeline-dot {
-                left: 0;
-              }
-      
-              .job-info {
-                text-align: left;
-              }
-            }
-          }
+    }
+}
+
+.job-item.right {
+    left: 55%; // 50% para la línea + 5% de margen
+    
+    .timeline-dot {
+        left: -10px; // 10px desde el borde izquierdo del 45%
+    }
+
+    .job-info {
+        text-align: left;
+    }
+}
+
+/* === RESPONSIVE: Tablet y Móvil (Max 1023px) === */
+
+@media screen and (max-width: 1023px) {
+    
+    // Ocultamos la línea central y la movemos a la izquierda (como en Education)
+    .jobs-content::before {
+        left: 20px; // Mueve la línea a la izquierda
+        transform: translateX(0);
+    }
+
+    .job-item {
+        width: 100%;
+        left: 0 !important; // Fuerza todos los ítems a la izquierda
+        padding-left: 60px; // Espacio para la nueva posición del punto
+        padding-right: 15px; // Asegura margen derecho
+    }
+
+    .timeline-dot {
+        left: 17px; // Posiciona el punto sobre la nueva línea
+        top: 1.8rem;
+        right: auto !important; // Deshace la regla 'right'
+    }
+
+    // Aseguramos que la info se alinee a la izquierda
+    .job-item .job-info {
+        text-align: left !important;
+        .job-lapse{
+            align-self: flex-start !important;
         }
-      }
-      
+    }
+    
+    // Ajuste de tipografía para pantallas más pequeñas
+    #Experience h1 {
+        font-size: 2.5em;
+    }
+    .job-info .job-title {
+        font-size: 1.2rem;
+    }
+    .job-info .job-lapse .job-text {
+        font-size: 0.9em;
+    }
 }
