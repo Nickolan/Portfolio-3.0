@@ -1,23 +1,23 @@
+// src/components/Mail.jsx (CON LOS ICONOS REACT-ICONS INCLUIDOS)
+
 import React, { useState, useContext } from 'react';
 import { LenguageContext } from '../utils/LenguajeContext' // Importamos el contexto de idioma
 import '../styles/Mail/Mail.css';
-// Importamos iconos (asumimos que tienes estos assets o usa un paquete de iconos)
-// import LinkedIn from '../assets/Skills/linkedin-logo.png'; 
-// import GitHub from '../assets/Skills/github-logo.png'; 
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"; // Añadimos FaEnvelope
 
 const Mail = () => {
-    const { isEnglish } = useContext(LenguageContext);
-    const mail = "nicolassantiagonavarrete.nsn@gmail.com" 
-    const linkedInUrl = "https://www.linkedin.com/in/nikolas-navarrete"; // URL de ejemplo
-    const githubUrl = "https://github.com/Nickolan"; // URL de ejemplo
+    const { isEnglish } = useContext(LenguageContext); //
+    const mail = "nicolassantiagonavarrete.nsn@gmail.com" //
+    const linkedInUrl = "https://www.linkedin.com/in/nikolas-navarrete"; //
+    const githubUrl = "https://github.com/Nickolan"; //
 
-    const [copied, setCopied] = useState(false);
+    const [copied, setCopied] = useState(false); //
 
-    const copyToClipboard = () => {
+    const copyToClipboard = () => { //
         navigator.clipboard.writeText(mail).then(() => {
             setCopied(true);
             setTimeout(() => setCopied(false), 2000); 
-        });
+        }); //
     };
 
     return (
@@ -31,19 +31,29 @@ const Mail = () => {
 
             <div className='contact-options'>
                 {/* Opción 1: Correo electrónico con Copy to Clipboard */}
-                <div className='contact-item email-item' onClick={copyToClipboard}>
-                    <span className='icon'>📧</span>
+                <div className={`contact-item email-item ${copied ? 'copied' : ''}`} onClick={copyToClipboard}>
+                    <span className='icon email-icon'><FaEnvelope /></span>
                     <div className='email-info'>
-                        <h4 className='mail-title'>{isEnglish ? "Send a Message" : "Enviar un Mensaje"}</h4>
-                        <span className={`mail ${copied ? 'copied' : ''}`}>
-                            {copied ? (isEnglish ? "Copied!" : "¡Copiado!") : mail}
+                        {/* El título se convierte en el texto que indica que fue copiado */}
+                        <h4 className='mail-title'>
+                             {isEnglish ? "Send a Message" : "Enviar un Mensaje"}
+                        </h4>
+                        
+                        {/* Manejamos el correo largo en una línea adaptable */}
+                        <span className={`mail-address`}> 
+                            {mail}
+                        </span>
+                        
+                        {/* Nuevo elemento visual para el estado de copiado */}
+                        <span className='copy-status'>
+                            {copied ? (isEnglish ? "Copied to clipboard!" : "¡Copiado al portapapeles!") : (isEnglish ? "Click to Copy" : "Click para Copiar")}
                         </span>
                     </div>
                 </div>
 
                 {/* Opción 2: LinkedIn */}
                 <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className='contact-item social-item'>
-                    <span className='icon'>🔗</span>
+                    <span className='icon social-icon'><FaLinkedin color='#0e76a8' /></span>
                     <div className='social-info'>
                         <h4 className='social-title'>LinkedIn</h4>
                         <span className='social-link'>{isEnglish ? "View Profile" : "Ver Perfil"}</span>
@@ -52,7 +62,7 @@ const Mail = () => {
 
                 {/* Opción 3: GitHub */}
                 <a href={githubUrl} target="_blank" rel="noopener noreferrer" className='contact-item social-item'>
-                    <span className='icon'>💾</span>
+                    <span className='icon social-icon'><FaGithub color='black' /></span>
                     <div className='social-info'>
                         <h4 className='social-title'>GitHub</h4>
                         <span className='social-link'>{isEnglish ? "View Projects" : "Ver Proyectos"}</span>

@@ -1,21 +1,30 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 div.zone {
-    width: 100%;
-    padding: 10px 20px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* Para pantallas más grandes que 768px (tablets y desktop) */
+@media screen and (min-width: 768px) {
+  div.zone {
+    max-width: 90%;
+    /* Ajustamos ligeramente para un mejor look en tablet */
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  /* Para pantallas más grandes que 768px (tablets y desktop) */
-  @media screen and (min-width: 768px) {
-    div.zone {
-      max-width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-    }
+}
+
+/* Y para un look más ancho en monitores grandes (opcional, si quieres más ancho que 80%) */
+@media screen and (min-width: 1200px) {
+  div.zone {
+    max-width: 1200px;
+    /* Puedes fijar un máximo o usar 80% */
+    width: 80%;
   }
-  
+}

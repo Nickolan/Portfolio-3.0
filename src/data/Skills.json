@@ -13,13 +13,14 @@
 
     {"name": "PosgreSQL", "category": "Databases"},
     {"name": "MongoDB", "category": "Databases"},
-
+    
     {"name": "Expo", "category": "Mobile"},
-
+    
     {"name": "Docker", "category": "DevOps"},
     {"name": "Git", "category": "DevOps"},
     {"name": "Azure", "category": "DevOps"},
     {"name": "Google_Cloud", "category": "DevOps"},
+    {"name": "Firebase", "category": "DevOps"},
     
     {"name": "Gemini", "category": "AI/Tools"},
     {"name": "ChatGPT", "category": "AI/Tools"}
