@@ -35,13 +35,16 @@ const ContactForm = () => {
         user_message: formData.message, // Coincide con {{user_message}}
     };
 
+    console.log(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+    
+
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
         .then((result) => {
-            console.log(result.text);
+            console.log(result);
             alert(isEnglish ? "Message sent successfully!" : "¡Mensaje enviado con éxito!");
             setFormData({ name: '', email: '', message: '' });
         }, (error) => {
-            console.log(error.text);
+            console.log(error);
             alert(isEnglish ? "An error occurred, please try again." : "Ocurrió un error, por favor inténtalo de nuevo.");
         });
 };
