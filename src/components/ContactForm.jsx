@@ -1,21 +1,20 @@
 // src/components/ContactForm.jsx
-
 import React, { useContext, useState } from 'react';
 import { LenguageContext } from '../utils/LenguajeContext';
 import '../styles/ContactForm/ContactForm.css';
 import emailjs from '@emailjs/browser';
 
-const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;      // ID del Servicio (Paso 1)
-const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;    // ID de la Plantilla (Paso 2)
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 const ContactForm = () => {
     const { isEnglish } = useContext(LenguageContext);
     
-    // Estado simple para manejar los datos del formulario (opcional, pero buena práctica)
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        asunto: '',
         message: ''
     });
 
@@ -27,78 +26,84 @@ const ContactForm = () => {
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    const templateParams = {
-        user_name: formData.name,       // Coincide con {{user_name}} en la plantilla
-        user_email: formData.email,     // Coincide con {{user_email}}
-        user_message: formData.message, // Coincide con {{user_message}}
+        const templateParams = {
+            user_name: formData.name,
+            user_email: formData.email,
+            asunto: formData.asunto, // Asegúrate de tener esta variable en tu plantilla de EmailJS
+            user_message: formData.message,
+        };
+
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+            .then((result) => {
+                alert(isEnglish ? "Message sent successfully!" : "¡Mensaje enviado con éxito!");
+                setFormData({ name: '', email: '', asunto: '', message: '' });
+            }, (error) => {
+                alert(isEnglish ? "An error occurred, please try again." : "Ocurrió un error.");
+            });
     };
 
-    console.log(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-    
-
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-        .then((result) => {
-            console.log(result);
-            alert(isEnglish ? "Message sent successfully!" : "¡Mensaje enviado con éxito!");
-            setFormData({ name: '', email: '', message: '' });
-        }, (error) => {
-            console.log(error);
-            alert(isEnglish ? "An error occurred, please try again." : "Ocurrió un error, por favor inténtalo de nuevo.");
-        });
-};
-
     return (
-        <div id='ContactForm' className='zone'>
+        <div id='ContactForm'>
             <h2>{isEnglish ? "Send Me a Message" : "Envíame un Mensaje"}</h2>
             <p className='form-intro'>
-                {isEnglish ? 
-                "Do you have a project or a question? Feel free to reach out!" : 
-                "¿Tienes un proyecto o una pregunta? ¡No dudes en contactarme!"}
+                {isEnglish ? "Do you have a project?" : "¿Tienes un proyecto?"}
             </p>
 
             <form className='contact-form-grid' onSubmit={handleSubmit}>
-                {/* Campo Nombre */}
+                {/* Nombre */}
                 <div className='form-group'>
-                    <label htmlFor="name">{isEnglish ? "Name" : "Nombre"}</label>
+                    <label>{isEnglish ? "Name" : "Nombre"}</label>
                     <input 
                         type="text" 
-                        id="name" 
                         name="name"
+                        placeholder={isEnglish ? "Your name..." : "Tu nombre..."}
                         value={formData.name}
                         onChange={handleChange}
                         required 
                     />
                 </div>
                 
-                {/* Campo Correo Electrónico */}
+                {/* Correo */}
                 <div className='form-group'>
-                    <label htmlFor="email">{isEnglish ? "Email" : "Correo Electrónico"}</label>
+                    <label>{isEnglish ? "Email" : "Correo electrónico"}</label>
                     <input 
                         type="email" 
-                        id="email" 
                         name="email"
+                        placeholder="example@mail.com"
                         value={formData.email}
                         onChange={handleChange}
                         required 
                     />
                 </div>
-                
-                {/* Campo Mensaje (Ocupa todo el ancho) */}
+
+                {/* ASUNTO (Ocupa todo el ancho para seguir el estilo de la imagen) */}
                 <div className='form-group full-width'>
-                    <label htmlFor="message">{isEnglish ? "Message" : "Mensaje"}</label>
+                    <label>{isEnglish ? "Subject" : "Asunto"}</label>
+                    <input 
+                        type="text" 
+                        name="asunto"
+                        placeholder={isEnglish ? "What is this about?" : "¿De qué trata este mensaje?"}
+                        value={formData.asunto}
+                        onChange={handleChange}
+                        required 
+                    />
+                </div>
+                
+                {/* Mensaje */}
+                <div className='form-group full-width'>
+                    <label>{isEnglish ? "Message" : "Mensaje"}</label>
                     <textarea 
-                        id="message" 
                         name="message"
                         rows="5"
+                        placeholder={isEnglish ? "Write here..." : "Escribe aquí..."}
                         value={formData.message}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 
-                {/* Botón de Envío */}
                 <button type="submit" className='submit-btn'>
                     {isEnglish ? "Send Message" : "Enviar Mensaje"}
                 </button>

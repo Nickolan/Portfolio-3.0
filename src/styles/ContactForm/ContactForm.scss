@@ -1,104 +1,109 @@
 // src/styles/ContactForm/ContactForm.scss
 
-$primary-bg: #fffdf8;
-$secundary-Color: var(--secundary-color);
-$text-color: #333;
-$border-color: #ccc;
+$bg-dark: #fffdf8; // Fondo oscuro para resaltar el neon
+$card-bg: #f7f7f7;
+$secondary-color: var(--secundary-color); 
+$text-light: #4fc3dc;
 
-#ContactForm {
-    padding: 4em 0;
-    text-align: center;
-    color: $text-color;
-    max-width: 800px;
-    margin: 0 auto;
-}
+//$text-color: #333; 
 
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
+#ContactForm { 
+    background-color: $bg-dark;
+    padding: 4em 2em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.form-intro {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 2em;
+    h2 {
+        color: $secondary-color; // Título en tu color
+        font-size: 2.2em;
+        margin-bottom: 0.5em;
+        text-shadow: 0 0 10px rgba($secondary-color, 0.3);
+    }
+
+    .form-intro {
+        color: $text-light;
+        opacity: 0.8;
+        margin-bottom: 2.5em;
+    }
 }
 
 .contact-form-grid {
+    background: $card-bg;
+    padding: 40px;
+    border-radius: 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas para Nombre y Correo */
-    gap: 20px;
-    padding: 0 20px;
-    text-align: left;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid rgba($secondary-color, 0.1);
+    box-shadow: 0 10px 30px rgba(#4fc3dc, 0.5);
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-}
+    text-align: left;
 
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 12px;
-    border: 1px solid $border-color;
-    border-radius: 8px;
-    font-size: 1em;
-    width: 100%;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    
-    &:focus {
-        outline: none;
-        border-color: $secundary-Color;
-        box-shadow: 0 0 0 3px rgba($secundary-Color, 0.2);
+    label {
+        color: $secondary-color; // Títulos de los inputs en tu color
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-size: 0.95em;
     }
-}
 
-.form-group textarea {
-    resize: vertical;
+    input, textarea {
+        background: rgba(0, 0, 0, 0.05  );
+        border: 1.5px solid rgba($secondary-color, 0.2);
+        border-radius: 10px;
+        padding: 12px 15px;
+        color: black;
+        font-size: 1em;
+        transition: all 0.3s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $secondary-color;
+            // Efecto de brillo (Glow)
+            box-shadow: 0 0 15px rgba($secondary-color, 0.5), 
+                        inset 0 0 5px rgba($secondary-color, 0.2);
+            background: rgba(#4fc3dc, 0.5);
+        }
+    }
 }
 
 .full-width {
-    grid-column: 1 / -1; /* Ocupa las dos columnas */
+    grid-column: 1 / -1;
 }
 
 .submit-btn {
-    grid-column: 1 / -1; 
-    width: 100%;
-    padding: 15px;
-    background-color: $secundary-Color;
-    color: white;
+    grid-column: 1 / -1;
+    background: $secondary-color;
+    color: white; // Texto oscuro para contraste sobre el neon
     border: none;
-    border-radius: 50px;
-    font-size: 1.1em;
+    padding: 15px;
+    border-radius: 8px;
     font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 10px;
-    
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    // Brillo inicial del botón
+    box-shadow: 0 0 10px rgba($secondary-color, 0.4);
+
     &:hover {
-        background-color: $secundary-Color;
         transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba($secondary-color, 0.7);
+        filter: brightness(1.1);
     }
 }
 
-/* Adaptación a dispositivos móviles */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .contact-form-grid {
-        grid-template-columns: 1fr; /* Una sola columna en móviles */
-    }
-    
-    .full-width {
-        grid-column: auto;
-    }
-
-    .submit-btn {
-        grid-column: auto;
-        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
