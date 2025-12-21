@@ -7,7 +7,7 @@
         "web-url": "https://doncatravel.com",
         "type": "Share Travel Platform",
         "type-es": "Plataforma de Viaje Compartidos",
-        "techStack": ["React", "React Native", "Node.js", "Express", "PostgreSQL", "Expo"] 
+        "techStack": ["React", "React Native", "Node.js", "Express", "PostgreSQL", "Expo", "Azure"] 
     },
     {
         "name": "M.N Club",
@@ -18,5 +18,25 @@
         "type": "Party Manager",
         "type-es": "Administrador De Fiestas",
         "techStack": ["React", "Node.js", "PostgreSQL", "React Native", "Azure"]
+    },
+    {
+        "name": "Books4All",
+        "img": "Books4AllImage.png",
+        "description": "Plataforma de e-commerce especializada en la venta de libros digitales, diseñada para ofrecer una experiencia de compra simple y segura, con acceso inmediato al contenido, gestión de bibliotecas personales y múltiples métodos de pago.",
+        "description_en": "E-commerce platform specialized in the sale of digital books, designed to offer a simple and secure shopping experience, with immediate access to content, personal library management and multiple payment methods.",
+        "web-url": "https://github.com/Nickolan/Books4All-Front",
+        "type": "E-commerce of digital books",
+        "type-es": "E-commerce de libros digitales",
+        "techStack": ["HTML", "CSS", "JAVASCRIPT", "React", "Node.js", "Express", "PostgreSQL"]
+    },
+    {
+        "name": "FindYourPerrito",
+        "img": "FindYourPerritoImage.png",
+        "description": "Aplicación web para la gestión y visualización de registros, que permite listar, filtrar, ordenar y crear datos almacenados en una base de datos.",
+        "description_en": "Web application for the management and visualization of records, which allows listing, filtering, sorting and creating data stored in a database.",
+        "web-url": "https://github.com/Nickolan/FindYourPerrito-Client",
+        "type": "Manager of Dogs",
+        "type-es": "Gestor de Perros",
+        "techStack": ["HTML", "CSS", "JAVASCRIPT", "React", "Redux", "Node.js", "Express", "PostgreSQL"]
     }
 ]

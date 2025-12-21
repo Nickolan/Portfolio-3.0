@@ -6,11 +6,15 @@ import { LenguageContext } from '../utils/LenguajeContext'
 import '../styles/Projects/Projects.css'
 import DoncaImage from '../assets/Work/Donca/Banner_Donca.png' //
 import MNImage from '../assets/Work/MN/Banner_MN.png' //
+import Books4AllImage from '../assets/Work/Books4All/BOOKS4ALL.png'
+import FindYourPerritoImage from '../assets/Work/FindYourPerrito/FindYourPerrito-Title.jpg'
 
 // Objeto para mapear nombres de imágenes a módulos de importación
 const projectImages = {
     "DoncaImage.png": DoncaImage,
     "MNImage.png": MNImage,
+    "Books4AllImage.png": Books4AllImage,
+    "FindYourPerritoImage.png": FindYourPerritoImage
     // Agrega aquí otras imágenes si las usas en el JSON
 };
 const Projects = () => {
