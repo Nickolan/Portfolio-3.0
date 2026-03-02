@@ -38,5 +38,15 @@
         "type": "Manager of Dogs",
         "type-es": "Gestor de Perros",
         "techStack": ["HTML", "CSS", "JAVASCRIPT", "React", "Redux", "Node.js", "Express", "PostgreSQL"]
+    },
+    {
+        "name": "Modelo Restaurante",
+        "img": "ModeloRestaurante-Banner.png",
+        "description": "Plataforma modelo de gestión de Restaurante/Cafeteria/Bar/Negocio, sistema de Pedidos en linea, Reservación de mesas y panel administrativo para control total del negocio.",
+        "description_en": "Model platform for restaurant/cafeteria/bar/business management, online ordering system, table reservations and administrative panel for total business control.",
+        "web-url": "https://restaurante-modelo-nu.vercel.app",
+        "type": "Restaurant Management System / RMS",
+        "type-es": "Sistema de gestión para restaurantes",
+        "techStack": ["HTML", "CSS", "JAVASCRIPT", "React", "Redux", "Node.js", "NestJS", "PostgreSQL"]
     }
 ]

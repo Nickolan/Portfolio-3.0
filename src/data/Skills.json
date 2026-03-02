@@ -23,5 +23,8 @@
     {"name": "Firebase", "category": "DevOps"},
     
     {"name": "Gemini", "category": "AI/Tools"},
-    {"name": "ChatGPT", "category": "AI/Tools"}
+    {"name": "ChatGPT", "category": "AI/Tools"},
+    {"name": "Antigravity", "category": "AI/Tools"},
+
+    {"name": "N8N", "category": "Automatization"}
 ]

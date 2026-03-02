@@ -20,7 +20,9 @@ import Java from '../assets/Skills/java-logo.png'
 import SpringBoot from '../assets/Skills/springboot-logo.png'
 import Gemini from '../assets/Skills/gemini-logo.png';
 import ChatGPT from '../assets/Skills/ChatGPT-logo.png';
-import Firebase from '../assets/Skills/firebase-logo.png'
+import Firebase from '../assets/Skills/firebase-logo.png';
+import N8N from '../assets/Skills/n8n-logo.png'
+import Antigravity from '../assets/Skills/antigravity-logo.jpg'
 
 export {HTML, 
     CSS, 
@@ -44,5 +46,7 @@ export {HTML,
     SpringBoot,
     Gemini,
     ChatGPT,
-    Firebase
+    Firebase,
+    N8N,
+    Antigravity
 }

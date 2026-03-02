@@ -13,7 +13,8 @@ const categories = [
     { key: 'Mobile', es: 'Mobile', en: 'Mobile' },
     { key: 'Databases', es: 'Bases de Datos', en: 'Databases' },
     { key: 'DevOps', es: 'DevOps & Cloud', en: 'DevOps & Cloud' },
-    { key: 'AI/Tools', es: 'IA / Herramientas', en: 'AI / Tools' }
+    { key: 'AI/Tools', es: 'IA / Herramientas', en: 'AI / Tools' },
+    { key: "Automatization", es: "Automatizaciones", en:'Automatization'}
 ];
 
 // Función para obtener la URL del logo de forma segura
