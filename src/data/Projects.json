@@ -40,13 +40,13 @@
         "techStack": ["HTML", "CSS", "JAVASCRIPT", "React", "Redux", "Node.js", "Express", "PostgreSQL"]
     },
     {
-        "name": "Modelo Restaurante",
-        "img": "ModeloRestaurante-Banner.png",
-        "description": "Plataforma modelo de gestión de Restaurante/Cafeteria/Bar/Negocio, sistema de Pedidos en linea, Reservación de mesas y panel administrativo para control total del negocio.",
-        "description_en": "Model platform for restaurant/cafeteria/bar/business management, online ordering system, table reservations and administrative panel for total business control.",
+        "name": "Sabor&Gestion",
+        "img": "sabor&gestion-banner.png",
+        "description": "Plataforma modelo de gestión de Restaurante/Cafeteria/Bar/Negocio, sistema de Pedidos en linea y panel administrativo para auditoria de ventas.",
+        "description_en": "Restaurant/Cafeteria/Bar/Business management platform model, online ordering system and administrative panel for sales auditing.",
         "web-url": "https://restaurante-modelo-nu.vercel.app",
-        "type": "Restaurant Management System / RMS",
-        "type-es": "Sistema de gestión para restaurantes",
-        "techStack": ["HTML", "CSS", "JAVASCRIPT", "React", "Redux", "Node.js", "NestJS", "PostgreSQL"]
+        "type": "Restaurant Order Management System",
+        "type-es": "Sistema de gestión de pedidos para Restaurante",
+        "techStack": ["TYPESCRIPT", "React", "Python", "FastAPI", "PostgreSQL", "Tailwind"]
     }
 ]

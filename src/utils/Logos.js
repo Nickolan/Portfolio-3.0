@@ -23,6 +23,10 @@ import ChatGPT from '../assets/Skills/ChatGPT-logo.png';
 import Firebase from '../assets/Skills/firebase-logo.png';
 import N8N from '../assets/Skills/n8n-logo.png'
 import Antigravity from '../assets/Skills/antigravity-logo.jpg'
+import Claude from '../assets/Skills/claude-logo.webp'
+import Opencode from '../assets/Skills/opencode-logo.png'
+import FastAPI from '../assets/Skills/fastapi-logo.png'
+import ClaudeCode from '../assets/Skills/claude-code-logo.png'
 
 export {HTML, 
     CSS, 
@@ -48,5 +52,9 @@ export {HTML,
     ChatGPT,
     Firebase,
     N8N,
-    Antigravity
+    Antigravity,
+    Claude,
+    Opencode,
+    FastAPI,
+    ClaudeCode
 }

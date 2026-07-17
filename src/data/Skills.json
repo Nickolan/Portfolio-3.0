@@ -10,6 +10,7 @@
     {"name": "Express", "category": "Backend"},
     {"name": "Java", "category": "Backend"},
     {"name": "SpringBoot", "category": "Backend"},
+    {"name": "FastAPI", "category": "Backend"},
 
     {"name": "PosgreSQL", "category": "Databases"},
     {"name": "MongoDB", "category": "Databases"},
@@ -25,6 +26,9 @@
     {"name": "Gemini", "category": "AI/Tools"},
     {"name": "ChatGPT", "category": "AI/Tools"},
     {"name": "Antigravity", "category": "AI/Tools"},
+    {"name": "Claude", "category": "AI/Tools"},
 
-    {"name": "N8N", "category": "Automatization"}
+    {"name": "N8N", "category": "Automatization"},
+    {"name": "Opencode", "category": "Automatization"},
+    {"name": "ClaudeCode", "category": "Automatization"}
 ]

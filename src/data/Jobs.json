@@ -1,5 +1,19 @@
 [
     {
+        "title": "Full Developer",
+        "corp": "Freelance",
+        "start-date": "25/07/2026",
+        "end-date": "",
+        "lapse": "07/2026",
+        "lapse-es": "07/2026",
+        "description": [
+            "Disponible para desarrollo de sitios web, aplicaciones móviles y sistemas de gestión."
+        ],
+        "description_en": [
+            "Available for website development, mobile apps, and management systems"
+        ]
+    },
+    {
         "title": "Full Stack Developer",
         "corp": "Go up Cloud",
         "start-date": "10/12/2023",

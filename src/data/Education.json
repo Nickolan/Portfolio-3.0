@@ -4,17 +4,19 @@
         "title_es": "Técnico Universitario en Programación",
         "title_en": "University Technician in Programming",
         "institution": "Universidad Tecnológica Nacional (UTN)",
-        "status_es": "En curso",
-        "status_en": "In Progress",
+        "status_es": "Finalizado *Resta Tesis*",
+        "status_en": "Completed *Tesis Left*",
         "lapse_es": "03/2024 - 06/2026",
         "lapse_en": "03/2024 - 06/2026",
         "details_es": [
-            "Énfasis en metodologías ágiles y desarrollo de software escalable.",
-            "Tecnologías principales: Java, Spring Boot, Python, N8N, Bases de datos relacionales."
+            "Aplicacion de metodologías ágiles, trabajo en equipo y desarrollo de software escalable.",
+            "Especializacion en manejo de herramientas de automatización y uso de IA para desarrollo",
+            "Tecnologías principales: Java, Spring Boot, Python, FastApi, N8N, Bases de datos relacionales."
         ],
         "details_en": [
-            "Emphasis on agile methodologies and scalable software development.",
-            "Main technologies: Java, Spring Boot, Python, N8N, Relational databases."
+            "Application of agile methodologies, teamwork, and scalable software development.",
+            "Specialization in the management of automation tools and the use of AI for development",
+            "Main technologies: Java, Spring Boot, Python, FastApi, N8N, Relational databases."
         ]
     },
     {
