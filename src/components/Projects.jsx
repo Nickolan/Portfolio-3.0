@@ -18,22 +18,26 @@ import DoncaFull from '../assets/Work/Donca/DoncaImage.png'
 import MNFull from '../assets/Work/MN/MNImage.png'
 import Books4AllFull from '../assets/Work/Books4All/B4A1.png'
 import FindYourPerritoFull from '../assets/Work/FindYourPerrito/FYP.png'
+import SaborGestionFull1 from '../assets/Work/G&S/s&g1.png'
+import SaborGestionFull2 from '../assets/Work/G&S/s&g2.png'
+import SaborGestionFull3 from '../assets/Work/G&S/s&g3.png'
+import SaborGestionFull4 from '../assets/Work/G&S/s&g4.png'
 
 const bannerImages = {
   "DoncaImage.png": DoncaBanner,
   "MNImage.png": MNBanner,
-  "Books4AllImage.png": Books4AllBanner,
-  "FindYourPerritoImage.png": FindYourPerritoBanner,
+  // "Books4AllImage.png": Books4AllBanner,
+  // "FindYourPerritoImage.png": FindYourPerritoBanner,
   //"ModeloRestaurante-Banner.png": ModeloRestauranteBanner,
-  "Sabor&GestionImage.png": SaborGestionBanner
+  "sabor&gestion-banner.png": SaborGestionBanner
 }
 
 const galleryImages = {
   "DoncaImage.png": [DoncaBanner, DoncaFull],
   "MNImage.png": [MNBanner, MNFull],
-  "Books4AllImage.png": [Books4AllBanner, Books4AllFull],
-  "FindYourPerritoImage.png": [FindYourPerritoBanner, FindYourPerritoFull],
-  "Sabor&GestionImage.png": [SaborGestionBanner]
+  // "Books4AllImage.png": [Books4AllBanner, Books4AllFull],
+  // "FindYourPerritoImage.png": [FindYourPerritoBanner, FindYourPerritoFull],
+  "sabor&gestion-banner.png": [SaborGestionBanner, SaborGestionFull1, SaborGestionFull2, SaborGestionFull3, SaborGestionFull4]
   //"ModeloRestaurante-Banner.png": [ModeloRestauranteBanner],
 }
 
@@ -41,8 +45,8 @@ const galleryImages = {
 const githubLinks = {
   "Donca": null,
   "M.N Club": null,
-  "Books4All": "https://github.com/Nickolan/Books4All-Front",
-  "FindYourPerrito": "https://github.com/Nickolan/FindYourPerrito-Client",
+  // "Books4All": "https://github.com/Nickolan/Books4All-Front",
+  // "FindYourPerrito": "https://github.com/Nickolan/FindYourPerrito-Client",
   //"Modelo Restaurante": "https://restaurante-modelo-nu.vercel.app",
   "Sabor&Gestion": null
 }
@@ -82,6 +86,7 @@ const ProjectModal = ({ project, isEnglish, onClose }) => {
   const images = galleryImages[project.img] || [bannerImages[project.img]]
   const description = isEnglish ? project.description_en : project.description
   const type = isEnglish ? project.type : project['type-es']
+  const date = isEnglish ? (project['date-en'] || project.date) : (project['date-es'] || project.date)
   const githubUrl = githubLinks[project.name]
   const hasWebUrl = project['web-url'] && !project['web-url'].includes('github.com')
   const hasGithub = githubUrl || (project['web-url'] && project['web-url'].includes('github.com'))
@@ -121,8 +126,15 @@ const ProjectModal = ({ project, isEnglish, onClose }) => {
         <div className="modal-info">
           {/* Header */}
           <div className="modal-header">
-            <div className="modal-type-badge">
-              {getTypeIcon(project.techStack)} {type}
+            <div className="modal-badges">
+              <div className="modal-type-badge">
+                {getTypeIcon(project.techStack)} {type}
+              </div>
+              {date && (
+                <div className="modal-date-badge">
+                  📅 {date}
+                </div>
+              )}
             </div>
             <h2 className="modal-title">{project.name}</h2>
           </div>
@@ -193,6 +205,7 @@ const Projects = () => {
     imgSrc: bannerImages[p.img],
     typeDisplay: isEnglish ? p.type : p['type-es'],
     descriptionDisplay: isEnglish ? p.description_en : p.description,
+    dateDisplay: isEnglish ? (p['date-en'] || p.date) : (p['date-es'] || p.date),
     techStack: p.techStack || []
   }))
 
@@ -219,6 +232,7 @@ const Projects = () => {
                     <div className='pjt-overlay-content'>
                       <span className='pjt-title'>{p.name}</span>
                       <span className='pjt-type-icon'>{getTypeIcon(p.techStack)} {p.typeDisplay}</span>
+                      {p.dateDisplay && <span className='pjt-date-tag'>📅 {p.dateDisplay}</span>}
                       <p className='pjt-summary'>
                         {Array.isArray(p.descriptionDisplay) ? p.descriptionDisplay[0] : p.descriptionDisplay}
                       </p>

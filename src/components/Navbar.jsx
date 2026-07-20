@@ -40,7 +40,7 @@ const Navbar = () => {
 
       {/* Nuevo botón de cambio de idioma */}
       <div 
-        className="cursor-pointer border border-[var(--secundary-color)] lg:border-2 px-[10px] py-[5px] lg:px-[15px] lg:py-[8px] rounded-full transition-all duration-300 hover:bg-[var(--secundary-color)] group"
+        className="cursor-pointer w-1 p-6 transition-all duration-300 hover:bg-[var(--secundary-color)]"
         onClick={() => toogleLenguage()}
       >
         <span className="font-semibold lg:font-bold text-xs lg:text-sm text-[var(--secundary-color)] group-hover:text-white transition-colors duration-300">
