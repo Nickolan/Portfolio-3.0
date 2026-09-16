@@ -5,7 +5,7 @@
 /* ── Shared ──────────────────────────────────────────────────────────────── */
 #About {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: #0a0a0a;
+  color: var(--text-primary);
 }
 
 /* ── Highlight in title ──────────────────────────────────────────────────── */
@@ -132,7 +132,7 @@
   #About .description-content .main-text {
     font-size: 0.95em;
     line-height: 1.75;
-    color: #444;
+    color: var(--text-secondary);
     text-align: center;
   }
 }
@@ -181,7 +181,7 @@
   #About .description-content .main-text {
     font-size: 1.05em;
     line-height: 1.75;
-    color: #444;
+    color: var(--text-secondary);
     text-align: center;
   }
 }
@@ -191,7 +191,7 @@
    ============================================================ */
 @media screen and (min-width: 1024px) {
   .zone {
-    color: black;
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,7 +250,7 @@
     font-size: 1.1em;
     line-height: 1.8;
     font-weight: 400;
-    color: #333;
+    color: var(--text-secondary);
     position: relative;
     padding-left: 20px;
     border-left: 3px solid var(--secundary-color);

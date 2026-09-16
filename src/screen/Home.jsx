@@ -14,7 +14,7 @@ import ContactForm from '../components/ContactForm'
 
 const Home = () => {
   return (
-    <div style={{gap: 30, paddingTop: 60, "--secundary-color": "#4fc3dc"}}>
+    <div style={{gap: 30, paddingTop: 60}}>
         {/* <BgAnimated/> */}
         <Navbar/>
         <Introduction/>

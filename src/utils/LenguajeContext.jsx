@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useState, useEffect} from 'react'
 
 export const LenguageContext = createContext();
 
@@ -7,11 +7,19 @@ export const ContextProvider = ({children}) => {
     const lenguages = ["En", 'Es', 'Pt']
 
     const [isEnglish, setIsEnglish] = useState(true)
-    const [thisColor, setThisColor] = useState(true)
 
     const [indexLenguage, setIndex] = useState(0)
 
     const [lenguage, setLenguage] = useState(lenguages[0])
+
+    const [isDarkMode, setIsDarkMode] = useState(
+      () => typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+    )
+
+    useEffect(() => {
+      document.documentElement.classList.toggle('dark', isDarkMode)
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
+    }, [isDarkMode])
 
 
     const changeLenguage = () => {
@@ -20,7 +28,7 @@ export const ContextProvider = ({children}) => {
       } else {
         setIndex(indexLenguage + 1)
       }
-      
+
       setLenguage(lenguages[indexLenguage])
     }
 
@@ -28,12 +36,12 @@ export const ContextProvider = ({children}) => {
       setIsEnglish(!isEnglish);
     }
 
-    const toogleColor = () =>{
-        setThisColor(!thisColor);
+    const toggleTheme = () => {
+      setIsDarkMode(prev => !prev);
     }
 
   return (
-    <LenguageContext.Provider value={{isEnglish, toogleLenguage, toogleColor, thisColor, lenguage, changeLenguage}}>
+    <LenguageContext.Provider value={{isEnglish, toogleLenguage, isDarkMode, toggleTheme, lenguage, changeLenguage}}>
       {children}
     </LenguageContext.Provider>
   )

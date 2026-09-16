@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './screen/Home';
-import AboutScreen from './screen/AboutScreen';
 
 import Introduction from './components/Introduction'
 import Navbar from './components/Navbar'

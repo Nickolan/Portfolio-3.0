@@ -70,10 +70,20 @@ const Introduction = () => {
         {/* Bio */}
         <p className='intro-bio'>
           {isEnglish
-            ? 'Full Stack Developer & AI Developer — building Web, Mobile and AI-powered systems. UTN student (Programming Technician) and Soy Henry bootcamp graduate. I integrate LLMs, automation flows (N8N) and cloud infrastructure into real products.'
-            : 'Full Stack Developer & AI Developer — construyo soluciones Web, Mobile y sistemas potenciados con IA. Estudiante de UTN (Técnico en Programación) y egresado de Soy Henry. Integro LLMs, flujos de automatización (N8N) e infraestructura cloud en productos reales.'
+            ? 'Full Stack Developer & AI Developer — building Web, Mobile and AI-powered systems. Graduated as a Technician in Advanced Programming from Universidad Tecnológica Nacional (UTN), Facultad Regional Mendoza, and Soy Henry bootcamp graduate. I integrate LLMs, automation flows (N8N) and cloud infrastructure into real products.'
+            : 'Full Stack Developer & AI Developer — construyo soluciones Web, Mobile y sistemas potenciados con IA. Técnico en Programación Avanzada graduado de la Universidad Tecnológica Nacional (UTN), Facultad Regional Mendoza, y egresado de Soy Henry. Integro LLMs, flujos de automatización (N8N) e infraestructura cloud en productos reales.'
           }
         </p>
+
+        {/* Graduate badge */}
+        <div className='intro-graduate'>
+          <span className='intro-graduate-icon'>🎓</span>
+          <span>
+            {isEnglish
+              ? 'Graduated — Technician in Advanced Programming'
+              : 'Graduado — Técnico en Programación Avanzada'}
+          </span>
+        </div>
 
         {/* Competency pills */}
         <div className='intro-competencies'>

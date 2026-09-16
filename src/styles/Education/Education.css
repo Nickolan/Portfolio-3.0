@@ -23,22 +23,22 @@
 .education-card {
   width: 100%;
   padding: 25px;
-  background-color: #f7f7f7;
+  background-color: var(--bg-surface-alt);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px var(--shadow-sm);
   transition: all 0.3s ease;
   text-align: left;
   border-left: 5px solid var(--secundary-color);
 }
 .education-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 15px var(--shadow-md);
 }
 
 /* Contenido de la Tarjeta */
 .education-info {
   padding: 0;
-  color: #333;
+  color: var(--text-secondary);
 }
 
 .education-title {
@@ -60,7 +60,7 @@
 
 .education-text {
   font-size: 0.9em;
-  color: #777;
+  color: var(--text-muted);
   font-style: italic;
 }
 
@@ -68,7 +68,7 @@
   margin-top: 15px;
   padding-left: 20px;
   list-style-type: "• ";
-  color: #333;
+  color: var(--text-secondary);
 }
 .education-details li {
   margin-bottom: 5px;

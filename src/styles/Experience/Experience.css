@@ -41,7 +41,7 @@
   height: 16px;
   background-color: #3498db;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid var(--bg-page);
   z-index: 2;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -62,8 +62,8 @@
   gap: 10px;
   display: flex;
   flex-direction: column;
-  background-color: #f7f7f7;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-surface-alt);
+  box-shadow: 0 4px 10px var(--shadow-sm);
 }
 
 .job-info .job-title {
@@ -80,7 +80,7 @@
 
 .job-info .job-lapse .job-text {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-secondary);
   margin-top: 0.25rem;
   font-weight: 600;
 }
@@ -88,7 +88,7 @@
 .job-info p {
   font-size: 1em;
   line-height: 1.5;
-  color: #333;
+  color: var(--text-secondary);
   margin-top: 5px;
 }
 

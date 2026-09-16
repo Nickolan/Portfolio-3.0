@@ -13,6 +13,11 @@ import FindYourPerritoBanner from '../assets/Work/FindYourPerrito/FindYourPerrit
 import ModeloRestauranteBanner from '../assets/Work/Restaurante/ModeloRestaurante-Banner.png'
 import SaborGestionBanner from '../assets/Work/G&S/sabor&gestion-banner.png'
 
+import WasaScannerBanner from '../assets/Work/Wasa-System/Wasa-Portada.png'
+import WasaScannerImg1 from '../assets/Work/Wasa-System/Wasa-Results1.png'
+import WasaScannerImg2 from '../assets/Work/Wasa-System/Wasa-Results2.png'
+import WasaScannerScann from '../assets/Work/Wasa-System/Wasa-Scanner.png'
+
 // Full-size images for modal gallery
 import DoncaFull from '../assets/Work/Donca/DoncaImage.png'
 import MNFull from '../assets/Work/MN/MNImage.png'
@@ -29,7 +34,8 @@ const bannerImages = {
   // "Books4AllImage.png": Books4AllBanner,
   // "FindYourPerritoImage.png": FindYourPerritoBanner,
   //"ModeloRestaurante-Banner.png": ModeloRestauranteBanner,
-  "sabor&gestion-banner.png": SaborGestionBanner
+  "sabor&gestion-banner.png": SaborGestionBanner,
+  "WasaImage.png": WasaScannerBanner
 }
 
 const galleryImages = {
@@ -37,7 +43,8 @@ const galleryImages = {
   "MNImage.png": [MNBanner, MNFull],
   // "Books4AllImage.png": [Books4AllBanner, Books4AllFull],
   // "FindYourPerritoImage.png": [FindYourPerritoBanner, FindYourPerritoFull],
-  "sabor&gestion-banner.png": [SaborGestionBanner, SaborGestionFull1, SaborGestionFull2, SaborGestionFull3, SaborGestionFull4]
+  "sabor&gestion-banner.png": [SaborGestionBanner, SaborGestionFull1, SaborGestionFull2, SaborGestionFull3, SaborGestionFull4],
+  "WasaImage.png": [WasaScannerBanner, WasaScannerImg1, WasaScannerImg2, WasaScannerScann]
   //"ModeloRestaurante-Banner.png": [ModeloRestauranteBanner],
 }
 
@@ -48,7 +55,8 @@ const githubLinks = {
   // "Books4All": "https://github.com/Nickolan/Books4All-Front",
   // "FindYourPerrito": "https://github.com/Nickolan/FindYourPerrito-Client",
   //"Modelo Restaurante": "https://restaurante-modelo-nu.vercel.app",
-  "Sabor&Gestion": null
+  "Sabor&Gestion": null,
+  "Wasa-System": "https://github.com/Nickolan/Wasa-System"
 }
 
 // Tech tag colors by category
@@ -69,7 +77,9 @@ const techColors = {
   "TYPESCRIPT": "#3178c6",
   "Python": "#3776AB",
   "FastAPI": "#009688",
-  "Tailwind": "#06B6D4"
+  "Tailwind": "#06B6D4",
+  "Redis": "#D82C20",
+  "N8N": "#EA4B71"
 }
 
 const getTypeIcon = (techStack) => {

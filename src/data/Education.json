@@ -1,13 +1,13 @@
 [
     {
         "id": 1,
-        "title_es": "Técnico Universitario en Programación",
-        "title_en": "University Technician in Programming",
-        "institution": "Universidad Tecnológica Nacional (UTN)",
-        "status_es": "Finalizado *Resta Tesis*",
-        "status_en": "Completed *Tesis Left*",
-        "lapse_es": "03/2024 - 06/2026",
-        "lapse_en": "03/2024 - 06/2026",
+        "title_es": "Técnico Universitario en Programación Avanzada",
+        "title_en": "University Technician in Advanced Programming",
+        "institution": "Universidad Tecnológica Nacional (UTN) - Facultad Regional Mendoza",
+        "status_es": "Graduado",
+        "status_en": "Graduated",
+        "lapse_es": "03/2024 - 09/2026",
+        "lapse_en": "03/2024 - 09/2026",
         "details_es": [
             "Aplicacion de metodologías ágiles, trabajo en equipo y desarrollo de software escalable.",
             "Especializacion en manejo de herramientas de automatización y uso de IA para desarrollo",

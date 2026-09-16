@@ -7,8 +7,8 @@
         "web-url": "https://doncatravel.com",
         "type": "Share Travel Platform",
         "type-es": "Plataforma de Viaje Compartidos",
-        "date-es": "Ene 2024 - Presente",
-        "date-en": "Jan 2024 - Present",
+        "date-es": "Ene 2024 - Oct 2025",
+        "date-en": "Jan 2024 - Oct 2025",
         "techStack": ["React", "React Native", "Node.js", "Express", "PostgreSQL", "Expo", "Azure"] 
     },
     {
@@ -34,5 +34,17 @@
         "date-es": "May 2024 - Jun 2024",
         "date-en": "May 2024 - Jun 2024",
         "techStack": ["TYPESCRIPT", "React", "Python", "FastAPI", "PostgreSQL", "Tailwind"]
+    },
+    {
+        "name": "Wasa-System",
+        "img": "WasaImage.png",
+        "description": "Proyecto de tesis: sistema que automatiza evaluaciones de seguridad de aplicaciones web orquestando con n8n múltiples escáneres (OWASP ZAP, Nuclei, ffuf y SQLMap). Deduplica y clasifica las vulnerabilidades por CWE y severidad, y las presenta en un dashboard dinámico.",
+        "description_en": "Thesis project: a system that automates web application security assessments by orchestrating multiple scanners (OWASP ZAP, Nuclei, ffuf, and SQLMap) with n8n. It deduplicates findings, classifies vulnerabilities by CWE and severity, and presents them in a dynamic dashboard.",
+        "web-url": "https://github.com/Nickolan/Wasa-System",
+        "type": "Automated Web Security Assessment System",
+        "type-es": "Sistema automatizado de evaluación de seguridad web",
+        "date-es": "Ago 2025 - Sep 2026",
+        "date-en": "Ago 2025 - Sep 2026",
+        "techStack": ["Python", "N8N", "React", "FastAPI", "PostgreSQL", "Tailwind", "Redis"]
     }
 ]
