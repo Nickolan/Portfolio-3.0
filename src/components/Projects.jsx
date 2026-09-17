@@ -12,11 +12,16 @@ import Books4AllBanner from '../assets/Work/Books4All/BOOKS4ALL.png'
 import FindYourPerritoBanner from '../assets/Work/FindYourPerrito/FindYourPerrito-Title.jpg'
 import ModeloRestauranteBanner from '../assets/Work/Restaurante/ModeloRestaurante-Banner.png'
 import SaborGestionBanner from '../assets/Work/G&S/sabor&gestion-banner.png'
-
 import WasaScannerBanner from '../assets/Work/Wasa-System/Wasa-Portada.png'
+import PaperFlowBanner from '../assets/Work/PaperFlow/PaperFlowLogo.png'
+
 import WasaScannerImg1 from '../assets/Work/Wasa-System/Wasa-Results1.png'
 import WasaScannerImg2 from '../assets/Work/Wasa-System/Wasa-Results2.png'
 import WasaScannerScann from '../assets/Work/Wasa-System/Wasa-Scanner.png'
+
+import PaperFlowImg1 from '../assets/Work/PaperFlow/PaperFlow1.png'
+import PaperFlowImg2 from '../assets/Work/PaperFlow/PaperFlow2.png'
+import PaperFlowImg3 from '../assets/Work/PaperFlow/PaperFlow3.png'
 
 // Full-size images for modal gallery
 import DoncaFull from '../assets/Work/Donca/DoncaImage.png'
@@ -35,7 +40,8 @@ const bannerImages = {
   // "FindYourPerritoImage.png": FindYourPerritoBanner,
   //"ModeloRestaurante-Banner.png": ModeloRestauranteBanner,
   "sabor&gestion-banner.png": SaborGestionBanner,
-  "WasaImage.png": WasaScannerBanner
+  "WasaImage.png": WasaScannerBanner,
+  "PapelFlowImage.png": PaperFlowBanner
 }
 
 const galleryImages = {
@@ -44,7 +50,8 @@ const galleryImages = {
   // "Books4AllImage.png": [Books4AllBanner, Books4AllFull],
   // "FindYourPerritoImage.png": [FindYourPerritoBanner, FindYourPerritoFull],
   "sabor&gestion-banner.png": [SaborGestionBanner, SaborGestionFull1, SaborGestionFull2, SaborGestionFull3, SaborGestionFull4],
-  "WasaImage.png": [WasaScannerBanner, WasaScannerImg1, WasaScannerImg2, WasaScannerScann]
+  "WasaImage.png": [WasaScannerBanner, WasaScannerImg1, WasaScannerImg2, WasaScannerScann],
+  "PapelFlowImage.png": [PaperFlowBanner, PaperFlowImg1, PaperFlowImg2, PaperFlowImg3]
   //"ModeloRestaurante-Banner.png": [ModeloRestauranteBanner],
 }
 
@@ -56,7 +63,8 @@ const githubLinks = {
   // "FindYourPerrito": "https://github.com/Nickolan/FindYourPerrito-Client",
   //"Modelo Restaurante": "https://restaurante-modelo-nu.vercel.app",
   "Sabor&Gestion": null,
-  "Wasa-System": "https://github.com/Nickolan/Wasa-System"
+  "Wasa-System": "https://github.com/Nickolan/Wasa-System",
+  "PaperFlow": "https://github.com/Nickolan/Gestion-Libreria-Cliente"
 }
 
 // Tech tag colors by category

@@ -46,5 +46,17 @@
         "date-es": "Ago 2025 - Sep 2026",
         "date-en": "Ago 2025 - Sep 2026",
         "techStack": ["Python", "N8N", "React", "FastAPI", "PostgreSQL", "Tailwind", "Redis"]
+    },
+    {
+        "name": "PapelFlow",
+        "img": "PapelFlowImage.png",
+        "description": "Plataforma de gestión comercial para papelerías y librerías de pequeño y mediano tamaño: catálogo de productos, control de stock, ventas con pagos mixtos, caja por turno con arqueo, gastos, comparativas financieras y auditoría completa.",
+        "description_en": "Business management platform for small and medium stationery shops and bookstores: product catalog, stock control, mixed-payment sales, shift-based cash register with reconciliation, expenses, financial comparatives, and full audit trail.",
+        "web-url": "https://github.com/Nickolan/Gestion-Libreria-Cliente",
+        "type": "Retail Business Management Platform",
+        "type-es": "Plataforma de Gestión Comercial",
+        "date-es": "Jul 2026 - Presente",
+        "date-en": "Jul 2026 - Present",
+        "techStack": ["Python", "FastAPI", "React", "TYPESCRIPT", "PostgreSQL", "Tailwind"]
     }
 ]
