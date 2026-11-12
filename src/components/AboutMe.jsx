@@ -1,7 +1,7 @@
 // src/components/AboutMe.jsx
 
 import React, {useContext} from 'react';
-import me from '../assets/Yo.png';
+import me from '../assets/yo.png';
 import { LenguageContext } from '../utils/LenguajeContext';
 import '../styles/AboutMe/AboutMe.css';
 
